@@ -1,0 +1,404 @@
+body {
+  background-color: #181f2a;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* =====NAVIGATION BAR===== */
+.nav .menu {
+  padding: 1em 2em;
+  background-color: #1c2431;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav .menu__logo {
+  width: 6em;
+}
+
+.nav .menu__links {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav .menu__item {
+  color: white;
+}
+
+.nav .menu__item:hover {
+  text-decoration: underline;
+}
+
+/* =====SECTION INTRO===== */
+.intro {
+  height: 92.7vh;
+  padding: 3em;
+  background-color: #1c2431;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.intro__titel, .intro__p, .intro__button {
+  position: relative;
+  z-index: 100;
+}
+
+.intro__title {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+
+.intro__p {
+  height: 20%;
+  margin: 0;
+  color: white;
+  line-height: 1.1rem;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intro__button {
+  padding: 1em 3em;
+  border-radius: 50px;
+  border: none;
+  background-color: #51c7d6;
+  color: white;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  -webkit-transition: background-color 100ms, -webkit-box-shadow 100ms;
+  transition: background-color 100ms, -webkit-box-shadow 100ms;
+  transition: background-color 100ms, box-shadow 100ms;
+  transition: background-color 100ms, box-shadow 100ms, -webkit-box-shadow 100ms;
+}
+
+.intro__button:hover {
+  background-color: #339ecc;
+  -webkit-box-shadow: 5px 5px 5px #0b1523;
+          box-shadow: 5px 5px 5px #0b1523;
+}
+
+.intro::before {
+  content: '';
+  width: 100%;
+  height: 30%;
+  display: block;
+  background: url(../../assets/images/bg-curvy-mobile.svg) no-repeat;
+  background-size: contain;
+  background-position-y: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* =====INFO===== */
+.info {
+  padding: 0 3em;
+  margin-top: 6em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  gap: 4em;
+}
+
+.info__card {
+  width: 100%;
+  height: 20em;
+  padding: 1em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info__icon {
+  width: 8em;
+}
+
+.info__icon-security {
+  width: 6em;
+}
+
+.info__icon-access {
+  width: 7em;
+}
+
+.info__text, .info__title {
+  color: white;
+  text-align: center;
+}
+
+/* =====STAY PRODUCTIVE===== */
+.productive {
+  padding: 3em;
+}
+
+.productive__info {
+  height: 14em;
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.productive__title, .productive__p {
+  color: white;
+}
+
+.productive__title {
+  font-family: "Raleway", sans-serif;
+}
+
+.productive__howWork {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding-bottom: .3em;
+  -webkit-box-shadow: 0 1px #65e2d9;
+          box-shadow: 0 1px #65e2d9;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+
+.productive__button {
+  margin-right: .7em;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #65e2d9;
+}
+
+.productive__i {
+  position: relative;
+  color: #65e2d9;
+}
+
+.productive__howWork::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #51c7d6;
+  display: block;
+  position: absolute;
+  z-index: -100;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 100ms ease-in;
+  transition: -webkit-transform 100ms ease-in;
+  transition: transform 100ms ease-in;
+  transition: transform 100ms ease-in, -webkit-transform 100ms ease-in;
+}
+
+.productive__howWork:hover::before {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.productive__howWork:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.productive__howWork:hover .productive__button,
+.productive__howWork:hover .productive__i {
+  cursor: pointer;
+  color: #0b1523;
+}
+
+/* =====TESTIMONY===== */
+.testimony {
+  padding: 0 3em;
+  margin-top: 5em;
+}
+
+.testimony__quotes {
+  -webkit-transform: scale(0.7) translateY(50%);
+          transform: scale(0.7) translateY(50%);
+}
+
+.testimony__cardsBox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (13em)[3];
+      grid-template-rows: repeat(3, 13em);
+  gap: 3em;
+}
+
+.testimony__card {
+  padding: 2em;
+  border-radius: 5px;
+  background-color: #202a3c;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.testimony__profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.testimony__photoP {
+  width: 3em;
+  margin-right: 1em;
+  border-radius: 50%;
+}
+
+.testimony__profileInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.testimony__name {
+  font-family: "Raleway", sans-serif;
+}
+
+.testimony__job {
+  font-size: .8em;
+}
+
+/* =====FORM===== */
+.subscribe {
+  height: 25em;
+  margin: 6em 6%;
+  padding: 0 3em;
+  background-color: #1c2431;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+}
+
+.subscribe__title {
+  font-family: "Raleway", sans-serif;
+}
+
+.subscribe__form {
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.subscribe__input, .subscribe__button {
+  height: 4em;
+  border-radius: 50px;
+  border: none;
+}
+
+.subscribe__input {
+  padding: 0 1em;
+}
+
+.subscribe__input:focus {
+  outline: 2px solid #339ecc;
+  background-color: #eee;
+}
+
+.subscribe__button {
+  background-color: #51c7d6;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  -webkit-transition: background-color 100ms, -webkit-box-shadow 100ms;
+  transition: background-color 100ms, -webkit-box-shadow 100ms;
+  transition: background-color 100ms, box-shadow 100ms;
+  transition: background-color 100ms, box-shadow 100ms, -webkit-box-shadow 100ms;
+}
+
+.subscribe__button:hover {
+  background-color: #339ecc;
+  -webkit-box-shadow: 5px 5px 5px #0b1523;
+          box-shadow: 5px 5px 5px #0b1523;
+}

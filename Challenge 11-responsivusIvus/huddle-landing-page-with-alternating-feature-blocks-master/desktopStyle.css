@@ -1,0 +1,111 @@
+@media screen and (min-width:768px) {
+    body {
+        font-size: 18px;
+    }
+    
+    /* ==== ==== intro, header ==== ==== */
+    .intro { 
+        margin-left: 2em;
+        margin-right: 2em;
+    } 
+
+    /* ---- the top part of the intro ---- */
+     /* .intro__top { } */
+
+    .intro__logo {
+        width: 8em;
+    }
+
+    .intro__try-free {
+        padding: 8px 23px;
+        font-size: .9em;
+    } 
+
+    /* ---- the center part, the text and the image ---- */
+    .intro__center-container {
+        width: 100%;  
+        height: 90%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .intro__center {
+        text-align: start;
+        align-items: flex-start;
+        width: 50%;
+    }
+
+    .intro__bottom {
+        width: 50%;
+    }
+
+    /* ==== ==== the main part ==== ==== */
+    /* .main {} */
+    
+    .main__card {
+        height: 60vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2.5em ;
+        overflow: hidden; 
+        justify-items: start;  
+        align-items: center;
+    }
+    
+    .main__left {
+        width: 75%;
+    }   
+    
+    .main__right {
+        text-align: left;
+        margin: 0;
+    } 
+    
+    .main__card-conversations .main__left {
+        grid-column: 2 / 3;
+    }
+    
+    .main__card-conversations .main__right {
+        grid-row: 1 / 2;
+    } 
+
+    /* ==== ==== ASIDE ==== ==== */
+    .aside__invitation-banner {
+        width: 50%;
+    }
+
+    /* ==== ==== FOOTER ==== ==== */
+    .footer {
+        height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) .5fr;
+        grid-template-rows: 1fr .1fr;
+        align-items: center;
+        padding-left: 2em;
+        padding-right: 2em;
+        gap: 1em;
+    }
+
+    .footer__main-info {
+        height: 100%;
+    }
+
+    .footer__nav {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .footer__nav-item:nth-child(4),
+    .footer__nav-item:nth-child(5),
+    .footer__nav-item:nth-child(6) {
+        grid-column: 2 / 3;
+    }
+
+    .footer__copyright {
+        font-size: .7em;
+        grid-column: 3 / 4;
+    }
+}

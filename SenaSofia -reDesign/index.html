@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/Tools/normalize.css">
+    <link rel="stylesheet" href="stylesSena.css">
+    <link rel="stylesheet" href="/Tools/all.min.css">
+
+    <!-- font styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logoZone">
+            <img class="logoZone__logo" src="assets/Sena-Sofia (1).png" alt="logo-sena-sofia">
+            <img class="logoZone__logo" src="assets/logo-gobierno.png" alt="logo-gobierno">
+            <img class="logoZone__logo" src="assets/english-Logo.png" alt="estudia-ingles-gratis">
+        </div>
+        <nav class="navigation">
+            <ul class="navigation__ul">
+                <div class="navigation__links">
+                    <li class="navigation__item"><a href="#">Inicio</a></li>
+                    <li class="navigation__item"><a href="#">Buscar Oferta</a></li>
+                    <li class="navigation__item"><a href="#">Presentar Pruebas De Selección</a></li>
+                    <li class="navigation__item"><a href="#">Certificados</a></li> 
+                    <li class="navigation__item"><a href="#">Ayuda y Soporte</a></li>
+                </div>
+
+                <div class="navigation__users">
+                    <li><a class="navigation__user-item href="#">
+                        <img src="assets/navBar/login.png">
+                        <p class="navigation__user-p">Iniciar sesión</p>
+                    </a></li>
+                    <li><a class="navigation__user-item" href="#">
+                        <img src="assets/navBar/singin.png">
+                        <p class="navigation__user-p">Registrarse</p>
+                    </a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="welcome">
+            <div class="welcome__main">
+                <h1 class="welcome__title">Bienvenido a SofiaPlus</h1>
+                <p class="welcome__p">El protal de oferta educativa del Sena</p>
+            </div>
+            <a class="welcome__inscriptions" href="#">
+                <p class="welcome__ins-p">Inscripciones</p>
+                <!-- <p class="welcome__ins-p">20 al 30 de Agosto del 2021</p> -->
+            </a>
+        </div>
+
+        <div class="programs">
+            <a class="programs__card" href="#">
+                <img class="programs__icon" src="assets/programas/medal.png" alt="">
+                <div class="programs__divider"></div>
+                <p class="programs__stment">Carreras Presenciales</p>
+            </a>
+            <a class="programs__card" href="#">
+                <img class="programs__icon" src="assets/programas/hand.png" alt="">
+                <div class="programs__divider"></div>
+                <p class="programs__stment">Carreras Virtuales</p>
+            </a>
+            <a class="programs__card" href="#">
+                <img class="programs__icon" src="assets/programas/pencil.png" alt="">
+                <div class="programs__divider"></div>
+                <p class="programs__stment">Cursos Cortos Presenciales</p>
+            </a>
+            <a class="programs__card" href="#">
+                <img class="programs__icon" src="assets/programas/laptop.png" alt="">
+                <div class="programs__divider"></div>
+                <p class="programs__stment">Cursos Cortos Virtuales</p>
+            </a>
+            <a class="programs__card" href="#">
+                <img class="programs__icon" src="assets/programas/message.png" alt="">
+                <div class="programs__divider"></div>
+                <p class="programs__stment">Curso De Inglés</p>
+            </a>
+        </div>
+
+        <section class="section2">
+
+            <div class="discover">
+                <form action="nice" class="discover__form">
+
+                    <div class="discover__study">
+                        <h3 class="discover__title">¿Dónde le gustaría estudiar?</h3>
+                        <div class="discover__choose">
+                            <select class="discover__selection discover__select" name="tipo de formacion">
+                                <option value="Todos los tipos">Todos los tipos</option>
+                                <option value="Carreras tecnicas">Carreras tecnicas</option>
+                                <option value="Cursos cortos">Cursos cortos</option>
+                                <option value="Formacion virtual">Formacion virtual</option>
+                                <option value="Formacion empresas">Formacion empresas</option>
+                            </select>
+                            <input class="discover__input input-study" type="text" placeholder="Ej: Cocina, Contabilidad">
+                        </div>
+                    </div>
+
+                    <div class="discover__where">
+                        <h3 class="discover__title">¿Dónde estudiar?</h3>
+                        <input class="discover__input input-where " placeholder="Ej: Cali, Cartagena" type="text">
+                    </div>
+
+                    <div class="discover__more">
+                        <select class="discover__criteria discover__select" name="more criteria">
+                            <option value="Todos los programas">Todos los programas</option>
+                            <option value="Solo programas con oferta disponible">Solo programas conoferta disponible</option>
+                        </select>
+                        <button class="discover__button" >Buscar</button>
+                        <a class="discover__advanced-search" href="#">¿Necesita una búsqueda más sencilla?</a>
+                    </div>
+
+                </form>
+            </div>
+
+            <section class="moreOptions">
+                <div class="moreOptions__left">
+                    <ul class="moreOptions__list">
+                        <li><a class="moreOptions__item" href="#">
+                            <p class="moreOptions__stment">Verifique si está inscrito en un programa de formación</p>
+                            <img class="moreOptions__logo" src="assets/more-options/check.png" alt="verificación">
+                        </a></li>
+                        <li><a class="moreOptions__item" href="#">
+                            <p class="moreOptions__stment">Fechas importantes</p>
+                            <img class="moreOptions__logo" src="assets/more-options/calendar.png" alt="Fechas importantes de  senaSofiaPlus">
+                        </a></li>
+                        <li><a class="moreOptions__item" href="#">
+                            <p class="moreOptions__stment">Guía de inscripción</p>
+                            <img class="moreOptions__logo" src="assets/more-options/guide.png" alt="guía de inscripció a  senaSofiaPlus">
+                        </a></li>
+                        <li><a class="moreOptions__item" href="#">
+                            <p class="moreOptions__stment">Apoyos de sostenimiento</p>
+                            <img class="moreOptions__logo" src="assets/more-options/social-care.png" alt="apoyo de sostenimiento de   senaSofiaPlus">
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="moreOptions__right">
+                    <p class="moreOptions__lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nulla odio autem dolorum nam ipsum, accusantium dolorem eum atque qui dolor consequuntur officia. Voluptatibus odit dolorum obcaecati commodi, illo totam.</p>
+                    <p class="moreOptions__lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nulla odio autem dolorum nam ipsum, accusantium dolorem eum atque qui dolor consequuntur officia. Voluptatibus odit dolorum obcaecati commodi, illo totam.</p>
+                    <p class="moreOptions__lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nulla odio autem dolorum nam ipsum, accusantium dolorem eum atque qui dolor consequuntur officia. Voluptatibus odit dolorum obcaecati commodi, illo totam.</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="contact">
+            <h5 class="contact__title">¿Necesita más información?</h5>
+            <div class="contact-ways">
+                <img class="contact-ways__logo" src="assets/footer/telephone.png" alt="contact SofiaPlus">
+                <div class="contact-ways__info">
+                    <p class="contact-ways__p">Bogotá: <b>3430111</b></p>
+                    <p class="contact-ways__p">Resto del país: <b>018000910270</b></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="schedule">
+            <h5 class="schedule__title">Horario de atención</h5>
+            <p class="schedule__p">Lunes a viernes: <b>7am a 7pm</b></p>
+            <p class="schedule__p">Sábados: <b>8am a 1pm</b></p>
+        </div>
+
+        <p class="rights">Todos los derechos reservados - 2006 / 2014</p>
+    </footer>
+</body>
+</html>

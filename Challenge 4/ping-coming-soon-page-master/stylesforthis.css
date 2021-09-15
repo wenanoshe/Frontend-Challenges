@@ -1,0 +1,130 @@
+:root {
+    /* Colors */
+
+ /* Secondary */
+    --paleBlue: hsl(223, 100%, 88%);
+    --lightRed: hsl(354, 100%, 66%);
+
+ /* Neutral */
+    --gray: hsl(0, 0%, 59%);
+    --darkBlue: hsl(209, 33%, 12%);
+
+    --trans: all 300ms;
+}
+
+body {
+    /* /* width: 100vw; */
+    height: 100vh; 
+    font-size: 20px;
+    font-family: 'Libre Franklin', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+/* the logo */
+.logo__img {
+    width: 70%;
+}
+
+/* the head */
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head h1 {
+    font-weight: 300;
+    color: var(--gray);
+    margin: 0px 0 15px 0;
+}
+
+.head b {
+    font-weight: 600;
+    color: var(--darkBlue);
+}
+
+.head p {
+    font-size: 16px;
+    color: #4b4b4b;
+}
+
+/* the form */
+
+.form__input {
+    width: 350px;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px solid var(--gray);
+    padding: 0 30px;
+    font-size: 18px;
+    color: var(--darkBlue);
+    transition: var(--trans);
+}
+
+.form__input:focus {
+    border: 1px solid #17af31;
+    outline: none;
+}
+
+.form__input:hover {
+    background-color: #d9f3df;
+}
+
+.form__button {
+    width: 150px;
+    height: 45px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    background-color: rgb(44, 209, 93);
+    font-weight: 600;
+    color: #eee;
+    box-shadow: 0 7px 10px #b2ecba;
+    transition: var(--trans);
+}
+
+.form__button:hover {
+    box-shadow: 0 7px 10px #99daa2;
+}   
+
+.form__button:active {
+    transform: scale(.95);
+}
+
+.form__button:focus {
+    outline: none;
+    filter: saturate(1.3);
+}
+
+/* main ilustration */
+.imgCon__img {
+    transition: var(--trans);
+}
+
+.imgCon__img:hover {
+    box-shadow: 0 10px 10px #dddbdb, 10px 0 10px #dddbdb, 0 -10px 10px #dddbdb, -10px 0 10px #dddbdb;
+}
+
+.imgCon__img {
+    width: 450px;
+}
+
+
+/* Social media icons */
+.socialMd {
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img-social {
+    width: 20px;
+}
+
+.caption {
+    font-size: 10px;
+}

@@ -1,0 +1,278 @@
+:root {
+    --pink: hsl(322, 100%, 66%);
+    --veryPaleCyan: hsl(193, 100%, 96%);
+    --veryDarkCyan: hsl(192, 100%, 9%);
+    --grayishBlue: hsl(208, 11%, 55%);
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--veryDarkCyan);
+    background-color: var(--veryPaleCyan);
+}
+/* ======= */
+/* ==== ==== HEADER ==== ==== */
+
+.intro {
+    height: 100vh;
+    background-image: url(images/bg-hero-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* the top part -- the logo and bottom -- */
+.intro__center-container {
+    height: 90%;
+}
+
+.intro__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 30px 0 30px;
+    justify-self: flex-start;
+}
+
+.intro__logo {
+    width: 5.55em;
+}
+
+.intro__try-free {
+    padding: 5px 20px;
+    font-size: .8em;
+    font-weight: 700;
+    color: var(--veryDarkCyan);
+    border: none;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #aaa;
+    border-radius: 50px;
+    transition:transform .1s, background-color .3s;
+}
+
+.intro__try-free:active {
+    transform: scale(.89);
+}
+
+.intro__try-free:hover {
+    background-color: var(--veryPaleCyan);
+}
+
+/* ---- the center part  -- basic info ---- */
+
+.intro__center {
+    height: 50%;
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.intro__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.intro__info {
+    font-family: 'open-sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.intro__start-free,
+.aside__start-free { /* this is the buttom pink */
+    width: 300px;
+    padding: 10px 0;
+    font-size: .9em;
+    font-weight: 600;
+    color: #eee;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--pink);
+    letter-spacing: .9px;
+    box-shadow: 2px 2px 5px #ff52c069;
+    transition: box-shadow .3s, background-color .3s, transform .1s;
+}
+
+.intro__start-free:active,
+.aside__start-free:active {
+    transform: scale(.9);
+}
+
+.intro__start-free:hover
+.aside__start-free:hover {
+    background-color: hsl(322, 77%, 54%);
+    box-shadow: 2px 2px 10px #ff52c0a4;
+}
+
+/* bottom part -- the img -- */
+.intro__bottom {
+    margin: 0 30px 10px 30px;
+}
+
+/* =================== */
+
+/* =================== */
+/*  MAIN */
+
+.main {
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 200px 0;
+}
+
+.main__card {
+    width: 80%;
+    margin: 20px ;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px #e5e5e5e5, -3px -3px 10px #e5e5e5e5;
+    padding: 40px 40px 20px 40px;
+    transition: box-shadow .3s;
+}
+
+.main__card:hover {
+    box-shadow: 5px 5px 15px #ccc, -5px -5px 15px #ccc;
+}
+
+.main__right {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--veryDarkCyan);
+}
+
+.main__h3 {
+    font-family:'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.main__p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+}
+
+/* ======================= */
+
+/* ======================= */
+/* ==== ==== ASIDE ==== ==== */
+.aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* bottom: 30px; */
+}
+
+.aside__invitation-banner {
+    width: 80%;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 13px;
+    position: absolute; 
+    top: -120px;
+    z-index: 100; 
+    box-shadow: -3px -3px 10px #4b4b4b41;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.aside__title {
+    color: var(--veryDarkCyan);
+}
+
+.aside__start-free {
+    width: 80%;
+}
+
+/* ==== ==== ==== ==== */
+
+/* ======================= */
+/* FOOTER */
+
+.footer {
+    height: 100vh;
+    background-color: var(--veryDarkCyan);
+    padding: 100px 30px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    color: #f1f1f1;
+}
+
+/* top part */
+.footer__main-info {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer__logo {
+    width: 200px;
+    filter: invert(1);
+}
+
+.footer__info {
+    display: flex;
+    font-size: 1rem;
+}
+
+.footer__icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 30px;
+}
+
+/* ================ */
+
+.footer__nav-container {
+    height: 30%;
+}
+
+.footer__nav {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer__nav-item {
+    color: #f1f1f1;
+    font-size: 1rem;
+}
+
+.footer__nav-item:hover {
+    color: var(--pink);
+}
+
+/* ============== */
+
+.footer__social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__social-icon {
+    font-size: 30px;
+    margin: 0 1em 0 1em;
+}
+
+.footer__social-icon:hover {
+    color: var(--pink);
+
+}
