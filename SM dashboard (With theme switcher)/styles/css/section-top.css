@@ -6,7 +6,10 @@
   /* ---------- */
 }
 .dash__cardsBox {
+  max-width: 1178.68px;
   margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

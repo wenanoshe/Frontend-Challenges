@@ -1,0 +1,16 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+html {scroll-behavior: smooth;}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+ul {list-style: none;}
+
+body {
+    background-color: $grayWhite;
+    font-family: $noto;
+}

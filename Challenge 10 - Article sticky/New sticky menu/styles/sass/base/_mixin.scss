@@ -1,0 +1,10 @@
+@mixin flexColumn ($js) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $js;
+}
+
+@mixin flexRow ($js) {
+    display: flex;
+    justify-content: $js;
+}

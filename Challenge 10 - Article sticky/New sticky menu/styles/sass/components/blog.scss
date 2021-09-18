@@ -1,0 +1,77 @@
+@use '../base/variables' as *;
+@use '../base/mixin' as *;
+
+
+main {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 3em;
+    padding: 0 3em;
+
+    font-family: $monserrate;
+
+}
+
+.aside {
+    min-width: max-content;
+    height: max-content;
+    padding: 1.5em;
+
+    background-color: $darkGrayGreen;
+    color: $white;
+
+    @include flexColumn(space-between);
+    
+    position: sticky;
+    top: 4em;
+        
+    &__title, &__link {
+        font-family: $monserrate;
+        flex-shrink: 1;
+    }
+
+    &__title {font-size: 1.4em; margin-bottom: 1em;}
+
+    &__link {
+        color: $lightSeeGreen;
+        transition: transform 300ms;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            right: 10%;
+            margin-left: 1em;
+            transition: transform 300ms;
+        }
+
+        &:hover::before {
+            content: '##';
+            transform: scale(1.2);
+        }
+        &:focus::before {
+            content: '##';
+            transform: scale(1.2);
+        }
+
+    }
+    
+}
+
+
+/* THE BLOG */
+.blog {
+    &__title {
+        font-weight: 400;
+        margin: 1.7em 0 .5em;
+    }
+
+    &__date {
+        margin-bottom: 2em;
+        color: $darkGrayBlue;
+        font-size: .9em;
+        font-weight: 700;
+    }
+}

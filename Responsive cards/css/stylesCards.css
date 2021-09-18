@@ -1,6 +1,8 @@
 body {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 0 5%;
     background-color: #eee;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,17 +11,16 @@ body {
 
 /* THE CARDS */
 .container {
+    /* width: 95vw; */
+    max-width: 1200px;
+
     display:grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(1, 100vh);
-    justify-items: center;
-    align-items: center;
-    width: 95vw;
+    grid-template-columns: repeat(3, minmax(238px, 295px)); 
+    justify-content: center;
+    gap: 7%;
 }
 
 .card {
-    width: 230px;
-    height: 300px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -57,21 +58,22 @@ body {
 }
 
 .card__bottom {
+    width: minmax(238px, 295px);
     height: 150px;
+    padding: 10px 10px;
+    
     background-color: #eee;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* border: 1px solid; */
-    padding: 10px 10px;
     text-align: center;
+
     position: relative;
     z-index: -100;
-    transform: translateY(-150px);
+    transform: translateY(-90%);
 
 }
-
-.card__bottom
 
 .card__bottom p {
     font-family:'Montserat', sans-serif;
@@ -80,7 +82,7 @@ body {
 
 /* the effect */
 .card__top {
-    transition: 800ms;
+    transition:  transform 500ms;
 }
 
 .card:hover .card__top{
@@ -88,7 +90,7 @@ body {
 }
 
 .card__bottom {
-    transition: 800ms;
+    transition:  transform 500ms;
 }
 
 .card:hover .card__bottom {
