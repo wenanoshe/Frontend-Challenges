@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+/* ---------------------------- */
+.calc {
+  /* general for the place in wich the result appear */
+}
+.calc__second {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  height: 80%;
+  border-radius: 10px;
+  padding: 1em 2em;
+  background-color: #00494d;
+  color: #f4fafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.calc__space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.calc__result {
+  color: #26c0ab;
+  font-size: 1.2rem;
+}
+
+/* mediaquery for the calculator */
+@media screen and (max-width: 650px) {
+  .calc {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, -webkit-max-content);
+    grid-template-rows: repeat(3, max-content);
+    gap: 1.5em;
+  }
+  .calc__btn-section {
+    grid-column: 1/2;
+    margin: 0;
+  }
+  .calc__second {
+    height: 110%;
+  }
+}

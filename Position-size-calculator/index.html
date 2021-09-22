@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/css/normalize.css">
+    <link rel="stylesheet" href="./styles/css/general.css">
+    <link rel="stylesheet" href="./styles/css/first-section.css">
+    <link rel="stylesheet" href="./styles/css/second-section.css">
+    
+    <!-- script -->
+    <script defer src="js/script.js"></script>
+    
+    
+    <title>Calculadora de Tamaño de posicion</title>
+</head>
+<body>
+    <h1 class="title">
+        <span>Calculadora</span> 
+        <span>de tamaño</span> 
+        <span>de posicion</span>
+    </h1>
+
+    <div class="calc">
+        
+        <section class="calc__first calc__section">
+            <div class="calc__input-place">
+                <label for="selectPair" class="calc__label">Par De Divisas</label>
+                <select class="calc__select" name="select" id="selectPair">
+                    <option class="calc__option" value="EUR/USD">EUR/USD</option>
+                    <option class="calc__option" value="AUD/USD">AUD/USD</option>
+                    <option class="calc__option" value="GBP/USD">GBP/USD</option>
+                    <option class="calc__option" value="NZD/USD">NZD/USD</option>
+                </select>
+            </div>
+
+            <div class="calc__input-place">
+                <label class="calc__label" for="accountSize">Tamaño De La Cuenta</label>
+                <input required class="calc__input" type="number" name="accountSize" id="accountSize" placeholder="$USD">
+            </div>
+
+            <div class="calc__input-place">
+                <label for="risk" class="calc__label">Riesgo %</label>
+                <input required class="calc__input" type="number" name="risk" id="risk" placeholder="%">
+            </div>
+
+            <div class="calc__input-place">
+                <label for="stopLoss" class="calc__label">Stop Loss</label>
+                <input required class="calc__input" type="number" name="stopLoss" id="stopLoss" placeholder="pips">
+            </div>
+
+        </section>
+
+        <!-- button section -->
+        <section class="calc__btn-section">
+            <input class="calc__btn" id="button" type="button" value="Calcular">
+        </section>
+        
+        
+        <!-- second section- result -->
+        <section class="calc__second calc__section">
+            <div class="calc__space calc__c-risk">
+                <span>Riesgo en USD</span>
+                <b class="calc__result" id="areaRisk"></b>
+            </div>
+            <div class="calc__space calc__c-units">
+                <span>Unidades</span>
+                <b class="calc__result" id="areaUnits"></b>
+            </div>
+            <div class="calc__space calc__c-lots">
+                <span>Lotaje</span>
+                <b class="calc__result" id="areaLots"></b>
+            </div>
+        </section>
+
+        
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+/* ---------------------------- */
+
+.calc {
+    &__second {
+        min-width: max-content;
+        height: 80%;
+        border-radius: $r;
+        padding: 1em 2em;
+        background-color: $veryDarkCyan;
+        color: $lightGrayishCyan1;
+
+        @include fc(space-between);
+    }
+
+    &__space {@include fc(space-between)} /* general for the place in wich the result appear */
+
+    &__result {
+        color: $strongCyan;
+        font-size: 1.2rem;
+    }
+
+}
+
+/* mediaquery for the calculator */
+@media screen and (max-width: 650px) {
+
+.calc {
+    height: max-content;
+    // height: calc(85vh - 108px);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    gap: 1.5em;
+
+    &__btn-section {
+        grid-column: 1 / 2;
+        margin: 0;
+    }
+    
+    &__second {
+        height: 110%;
+        // grid-row: 3 / 4;
+    }
+    
+}
+
+
+
+}

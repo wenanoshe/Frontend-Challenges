@@ -1,0 +1,10 @@
+@mixin fc($jc) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $jc;
+}
+
+@mixin fr($jc) {
+    display: flex;
+    justify-content: $jc;
+}

@@ -1,0 +1,92 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+/* ---------------------------- */
+
+.calc {
+    background-color: $lightGrayishCyan1;
+    padding: 1.5em 5%;
+    border-radius: $r;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    gap: 0 10%;
+    align-content: space-between;
+    align-items: center;
+    
+    &__first {
+        // @include fc(space-between);
+        height: 100%;
+
+        display: grid;
+        grid-template: repeat(4, max-content) / max-content;
+        gap: .6em;
+    }
+
+    
+    &__input-place {
+        @include fc(space-between);
+        // margin-bottom: .6em;
+    }
+
+    &__input, &__select, &__btn {
+        border-radius: $r2;
+        border: 1px solid #444;
+        height: 1.75em;
+        padding: 0 .7em;
+        
+        &:focus {
+            outline: none;
+        }
+    }
+
+
+    /* inputs actives */
+    &__input:focus, &__select:focus {
+        border: 1px solid $strongCyan;
+        background-color: $lightGrayishCyan1;
+    }
+
+    &__input:hover, &__select:focus{
+        background-color: $lightGrayishCyan1;
+    }
+
+    /* ------------------ */
+
+    // &__input::placeholder {}
+
+    &__input::-webkit-outer-spin-button,
+    &__input::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+    }
+    &__input{-moz-appearance: textfield;}
+    
+
+    /* button */
+    &__btn-section {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+
+        // height: max-content;
+        @include fr(center);
+        margin-top: 1em;
+    }
+
+    &__btn {
+        width: 50%;
+        height: 2em;
+        background-color: $veryDarkCyan;
+        color: $lightGrayishCyan1;
+        border: none;
+        cursor: pointer;
+
+        &:hover {background-color: $strongCyan;}
+        &:focus {
+            box-shadow: 3px 3px 5px $lightGrayishCyan2;
+            background-color: $veryDarkCyan2;
+        }
+    }
+
+}

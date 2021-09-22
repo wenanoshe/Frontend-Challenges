@@ -1,0 +1,28 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+
+/* general */
+body {
+    // min-height: 100vh;
+    font-family: $spaceMono;
+    background-color: $lightGrayishCyan2;
+    @include fc(center);
+    align-items: center;
+}
+
+.title {
+    margin: 5%;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align: center;
+    
+    @include fc(space-between);
+}
+
+
+// @media screen and (max-width: 650px) {
+//     body {
+//         min-height: 100vh;
+//     }
+// }
