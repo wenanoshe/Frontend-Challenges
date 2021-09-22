@@ -27,23 +27,25 @@ const calc = () => {
     const riskP = riskN / 100;
     let riskDll = accSize * riskP;
 
-
-
-
+/* lots */
     let lots = riskDll / (slPips * 10);
-    areaLots.textContent = lots.toPrecision(1);
+    if (lots < 0.01) areaLots.textContent = 0;
+    else areaLots.textContent = lots.toPrecision(1);
+/* ---- */
 
+/* units */
     let units = riskDll / 0.0001;
     areaUnits.textContent = units;
-
+/* ---- */
+    
+/* risk */
     areaRisk.textContent = `$ ${riskDll}`;
-
 
 }
 
 const check = () => {
     if (as.value === "" || rk.value === "" || stoploss.value === "") {
-        alert('Rellena todos los campos');
+        alert('¡Rellena todos los campos!');
     } else calc();
 }
 

@@ -90,3 +90,19 @@
     }
 
 }
+
+
+/* mediaquerys */
+@media screen and (max-width: 650px) {
+
+.calc {    
+    padding: 1.5em 10%;
+    
+    &__input, &__select, &__btn {
+        height: 2.5em;
+    }
+
+    &__btn {width: 80%;}
+
+}
+}

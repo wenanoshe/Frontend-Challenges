@@ -88,3 +88,16 @@
           box-shadow: 3px 3px 5px #c5e4e7;
   background-color: #05585c;
 }
+
+/* mediaquerys */
+@media screen and (max-width: 650px) {
+  .calc {
+    padding: 1.5em 10%;
+  }
+  .calc__input, .calc__select, .calc__btn {
+    height: 2.5em;
+  }
+  .calc__btn {
+    width: 80%;
+  }
+}
