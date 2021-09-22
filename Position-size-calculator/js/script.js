@@ -1,14 +1,12 @@
+const button = document.getElementById('button');
+
 const as = document.getElementById('accountSize');
 const rk = document.getElementById('risk');
 const stoploss = document.getElementById('stopLoss');
-const button = document.getElementById('button');
 
-const riskN = parseInt(rk.value);
 
 /* numbers converted */
-const accSize = parseInt(as.value);
-const riskP = riskN / 100;
-const slPips = parseInt(stoploss.value);
+
 /* -------------- */
 
 
@@ -20,9 +18,18 @@ const areaLots = document.getElementById('areaLots');
 
 
 /* function that calculates */
-let riskDll = accSize * riskP;
 
 const calc = () => {
+    const riskN = parseInt(rk.value);
+    const accSize = parseInt(as.value);
+    const slPips = parseInt(stoploss.value);
+
+    const riskP = riskN / 100;
+    let riskDll = accSize * riskP;
+
+
+
+
     let lots = riskDll / (slPips * 10);
     areaLots.textContent = lots.toPrecision(1);
 
@@ -34,35 +41,10 @@ const calc = () => {
 
 }
 
-button.addEventListener('click', calc);
+const check = () => {
+    if (as.value === "" || rk.value === "" || stoploss.value === "") {
+        alert('Rellena todos los campos');
+    } else calc();
+}
 
-// const calcLots = () => { 
-//     let lots = riskDll / (slPips * 10);
-
-//     areaLots.textContent = lots.toPrecision(1);
-// }
-
-// const calcRisk = () => areaRisk.textContent = `$ ${riskDll}`;
-
-// const calcUnits = () => {
-//     let units = riskDll / 0.0001;
-//     areaUnits.textContent = units;
-// }
-
-
-// /* -------------- */
-
-// /* function to print */
-// const printResult = () => {
-//     calcLots();
-//     calcRisk();
-//     calcUnits();
-// }
-// /* -------------- */
-
-
-// button.addEventListener('click', printResult);
-
-
-
-
+button.addEventListener('click', check);
