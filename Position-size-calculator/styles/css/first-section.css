@@ -46,6 +46,9 @@
 .calc__input:focus, .calc__select:focus, .calc__btn:focus {
   outline: none;
 }
+.calc__select {
+  background-color: white;
+}
 .calc__input:focus, .calc__select:focus {
   border: 1px solid #26c0ab;
   background-color: #f4fafa;

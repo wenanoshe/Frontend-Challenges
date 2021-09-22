@@ -41,6 +41,8 @@
         }
     }
 
+    &__select {background-color: $white;}
+
 
     /* inputs actives */
     &__input:focus, &__select:focus {
