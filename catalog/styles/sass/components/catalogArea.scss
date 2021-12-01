@@ -1,0 +1,24 @@
+@use '../base/_mixin' as *;
+@use '../base/_variables' as *;
+
+.catalog {
+    padding: 2em 4em;
+    display: grid;
+    gap: 3em;
+    grid-template-columns: repeat(auto-fit, 15em);
+}
+
+.card {
+    height: 20em;
+    background-color: #cdecde;
+    border-radius: 7px;
+
+    &__input-box {
+        height: 50%;
+        background-color: red;
+    }
+
+    &__image {
+        object-fit: scale-down;
+    }
+}
