@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://kit.fontawesome.com/9b83600627.js" crossorigin="anonymous"></script>
+    <script defer src="scripts/script.js"></script>
     
     <link rel="stylesheet" href="styles/css/normalize.css">
-    <link rel="stylesheet" href="styles/css/general.min.css">
+    <link rel="stylesheet" href="styles/css/styles.min.css">
+    <!-- <link rel="stylesheet" href="styles/css/general.min.css">
     <link rel="stylesheet" href="styles/css/navBar.min.css">
-    <link rel="stylesheet" href="styles/css/catalogArea.min.css">
+    <link rel="stylesheet" href="styles/css/catalogArea.min.css"> -->
     
     <title>Document</title>
 </head>
@@ -45,13 +47,16 @@
         <div class="catalog">
             <div class="card">
                 <div class="card__input-box">
-                        <!-- <label class="card__label" for="uploadImage">Upload image</label>
-                        <input class="card__input" id="uploadImage" type="file"> -->
-                    <img class="card__image" src="assets/images/greenLandscape.png">
+                    <img class="card__image">
+                    <label class="card__label" for="uploadImage">
+                        <span>Upload image</span>
+                        <i class="fas fa-upload"></i>
+                    </label>
+                    <input class="card__input" id="uploadImage" type="file" accept="image/png, image/gif, image/jpeg">
                 </div>
                 <div class="card__info">
-                    <h3 class="card__productTitle" contenteditable="true">Shoes blue aqua</h3>
-                    <p class="card__productDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, nemo?</p>
+                    <h3 class="card__productTitle" contenteditable="true">Set a product title</h3>
+                    <p class="card__productDescription" contenteditable="true">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, nemo?</p>
                 </div>
             </div>
         </div>

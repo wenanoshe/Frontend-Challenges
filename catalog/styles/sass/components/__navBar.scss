@@ -36,6 +36,7 @@
         &:hover {
             box-shadow: 5px 5px 5px $d-Blue;
             color: $darker;
+            transform: $hoverEffect-3;
         }
         
         &:focus {
