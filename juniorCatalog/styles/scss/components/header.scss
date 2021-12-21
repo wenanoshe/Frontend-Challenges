@@ -1,0 +1,85 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.header {
+    &__ul {
+        height: 3em;
+        padding: 0 2em;
+        
+        @include fr(start, center);
+        background-color: $apricot;
+    }
+
+    &__logoBox {
+        height: 100%;
+
+        margin-right: auto;
+       @include fr(space-between, center);
+       cursor: default;
+    }
+
+    &__logoTxt {
+        font-family: $Playfair;
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+
+    &__logo {
+        height: 100%;
+    }
+
+    /* the left part of the navBar */
+    &__li {
+        margin-right: 4em;
+        color: $darkLavander;
+        position: relative;
+        
+        /* &::before {
+            @include before(100%, 2px, absolute);
+            background-color: red;
+        } */
+
+    }
+    
+    &__fas {
+        transition: transform 200ms;
+    }
+
+    &__li:hover > &__fas {
+        transform: rotateY(180deg) ;
+    }
+
+    /* the button */
+    &__addBox {
+        height: 100%;
+        @include fr(space-between, center)
+    }
+    
+    &__addBtn {
+        height: 70%;
+        padding: .5em 1em;
+        cursor: pointer;
+
+        color: $darkLavander;
+        background-color: $desBlue;
+
+        border: none;
+        outline: none;
+        border-radius: 7px;
+
+        @include fr(space-between, center);
+
+        transition: box-shadow 200ms, transform 200ms;
+
+        &:hover {
+            box-shadow: -3px 3px 5px $darkMelon;
+            transform: translate(3px, -3px);
+        }
+
+        
+    }
+    &__addTxt {font-size: .9rem;}
+    &__addIcon {height: 100%; margin-right: .5em;}
+
+
+}

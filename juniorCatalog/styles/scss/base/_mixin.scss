@@ -1,0 +1,20 @@
+@mixin fr($jc, $ai: stretch) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin fc($jc, $ai: stretch) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: $ai;
+}
+
+@mixin before($width, $height, $position: static) {
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+    position: $position;
+}
