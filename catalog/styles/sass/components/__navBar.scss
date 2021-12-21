@@ -1,0 +1,48 @@
+@use '../base/_mixin' as *;
+@use '../base/_variables' as *;
+
+.navBar {
+    @include flex(space-between);
+    background-color: $d-BlueLight2;
+    padding: 1em 2em;
+    border-bottom: 1px solid $d-Blue;
+    
+
+    &__container-logo {
+        font-size: 2em;
+        font-family: $playfair;
+        color: $darker;
+        user-select: none;
+    }
+
+    &__ul {
+        width: 40%;
+        @include flex(space-between, center);
+    }
+
+    &__link {
+        font-size: 1.1rem;
+        &:hover {
+            color: #143752;
+        }
+    }
+
+    &__btn {
+        background-color: $d-BlueLight;
+        border: none;
+        outline: none;
+        padding: .5em 1em;
+        
+        &:hover {
+            box-shadow: 5px 5px 5px $d-Blue;
+            color: $darker;
+            transform: $hoverEffect-3;
+        }
+        
+        &:focus {
+            outline: 2px dotted $l-Blue;
+        }
+
+        & .fas {margin-right: .5em;}
+    }
+}
