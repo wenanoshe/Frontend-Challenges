@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/css/normalize.css">
+    <link rel="stylesheet" href="styles/css/general.min.css">
+    <link rel="stylesheet" href="styles/css/intro.min.css">
+    <link rel="stylesheet" href="styles/css/main.min.css">
+
+    <script src="cookiesVerification.js" defer></script>
+    <script defer src="main.js"></script>
+
+    <title>Cookies</title>
+</head>
+<body>
+    <div class="bgmodal">
+        <div class="modal">
+            <p>By using this website, you agree to our use of cookies. We use cookies to provide you with a great experience and to help our website run effectively.</p>
+            <button class="modal__btn" id="accept">Accept</button>
+            <button class="modal__btn" id="deny">Deny</button>
+        </div>
+    </div>
+    <header>
+        <nav class="nav">
+            <ul class="nav__ul">
+                <li class="nav__logoBox"><img class="nav__logo" src="assets/logo.png"></li>
+                <li><a class="nav__link" href="#">Blog</a></li>
+                <li><a class="nav__link" href="#">About</a></li>
+                <li><a class="nav__link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="intro">
+            <h1 class="intro__title">A Web Developer's Guide to Cookies</h1>
+            <span class="intro__date">October 13, 2016 / Amir Boroumand</span>
+            <section class="intro__intro">
+                <div class="intro__overview">
+                    <h2>Overview</h2>
+                    <p>Cookies are an essential part of the web as well as a source of privacy concerns and security risks.</p>
+                    <p>For this reason, it's important that web developers have a solid understanding of how cookies work. </p>
+                </div>
+                <div class="intro__history">
+                    <h2>History</h2>
+                    <p>Cookies were invented by Netscape in the mid-90's as a way to store some user information in the browser rather than requiring the web server to store it.</p>
+                </div>
+                <div class="intro__need">
+                    <h2>Why do we need cookies?</h2>
+                    <p>HTTP is a stateless protocol which means it remembers nothing between different request/response exchanges. The server handles each request as a separate distinct connection. The web server doesn't remember if you logged in already, set a preferred language, etc.</p>
+                    <p>The use cases for cookies have evolved over the past two decades and they are now commonly used for:</p>
+                    <ul class="intro__list">
+                        <li>Session Management (keep users logged in as they navigate between pages)</li>
+                        <li>Shopping Carts</li>
+                        <li>Personalization</li>
+                        <li>Tracking Activity for Serving Ads</li>
+                    </ul>
+                </div>
+                <img class="intro__cookieImg" src="assets/image-asset.jpeg">
+            </section>
+        </article>
+        <article class="main">
+            <section class="main__whatIs">
+                <h2>What's in a cookie?</h2>
+                <p>A cookie is simply text data that's stored by the browser and contains the following information:</p>
+                <ul class="main__explication">
+                    <li>A name-value pair containing the actual data (e.g. id = 1034820810)</li>
+                    <li>An expiration date that sets the lifetime of the cookie (UTC/GMT format). If no expiration date is set, then the cookie is discarded once the user closes their browser.</li>
+                    <li> domain and path of the server it belongs to. This is used to restrict which site the cookie can be shared with.</li>
+                    <li>(Optional) Secure instructs the browser to send the cookie only over HTTPS</li>
+                    <li>(Optional) HttpOnly prevents the cookie from being accessible via any client-side code.  This is used to prevent malicious scripts from stealing cookies with sensitive data like sessions.</li>
+                </ul>
+                <p>Here's a screenshot from Chrome Developer Tools for the cookies set by nytimes.com:</p>
+                <img src="assets/nytimes-com.png">
+            </section>
+            <section class="main__creation">
+                <h2>How is a cookie created?</h2>
+                <p>To create a cookie, the server adds a Set-Cookie header to its HTTP response as seen in line 4 below:</p>
+                <code>
+                    <ol>
+                        <li>HTTP/1.1 200 OK</li>
+                        <li>Content-Type: text/html; charset=utf-8</li>
+                        <li>Date: Thu, 13 Oct 2016 16:03:41 GMT</li>
+                        <li>Set-Cookie: RMID=007f010109ee57ff1a960007; path=/; domain=.nytimes.com; expires=Fri, 13 Oct 2017 05:24:38 UTC</li>
+                    </ol>
+                </code>
+                <p>Once the browser has stored the cookie, it is sent as part of every every subsequent request to the same URL as the content of a Cookie header in the HTTP request:</p>
+                <code>
+                    <ol>
+                        <li>GET / HTTP/1.1</li>
+                        <li>Host: www.nytimes.com</li>
+                        <li>Cookie: RMID=007f010109ee57ff1a960007;</li>
+                        <li>User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36</li>
+                    </ol>
+                </code>                
+                <p>Notice that the client only sends the name-value pair and none of the other attributes (path, expiration date, secure).</p>
+                <p>This is because the server doesn't care about those attributes.  The attributes serve as instructions from the server to the browser about how and when to send the cookie back.</p>
+            </section>  
+        </article>
+    </main>  
+    <footer>
+        <p>© 2020 Code by Amir.  All rights reserved.</p>
+    </footer>
+</body>
+</html>

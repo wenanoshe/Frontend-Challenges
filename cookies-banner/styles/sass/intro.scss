@@ -1,0 +1,56 @@
+@use 'varmin.scss' as *;
+
+// == navigation bar == //
+.nav {
+    &__ul {
+        padding: 0 1em;
+        list-style: none;
+        @include flex(row, stretch, center);
+        background-color: aliceblue;
+    }
+    &__logoBox {
+        margin-right: auto;
+        width: 20em;
+    }
+    &__link {
+        margin-left: 3em;
+        color: hsl(240, 58%, 49%);
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+// --- intro Part --- //
+.intro {
+    margin-top: 4em;
+
+    &__title {
+        font-size: 3em;
+        margin-bottom: .2em;
+    }
+    &__date {
+        color: #999;
+        font-style: italic;
+        // margin-left: 3em;
+    }
+
+    //-- intro
+    &__intro {
+        margin-top: 3em;
+
+        display: grid;
+        grid-template: repeat(3, max-content) / repeat(2, 1fr);
+    }
+    &__cookieImg {
+        grid-column: 2 / 3;
+        grid-row: 1 / 4;
+        margin-left: 5em;
+    }
+    &__list {
+        margin-left: 3em;
+    }
+}
+
+
