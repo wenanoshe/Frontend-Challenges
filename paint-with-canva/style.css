@@ -12,6 +12,10 @@ body {
     color: #333;
 }
 
+a {
+    color: #333;
+}
+
 .title {
     text-align: center;
     margin: .7em;

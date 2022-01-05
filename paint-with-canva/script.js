@@ -42,3 +42,11 @@ canvas.addEventListener('mouseup', e => {
 
 document.getElementById('clean').addEventListener('click', () => canvas.width = canvas.width);
 
+/* =================For nice.html=================== */
+const canva2 = document.getElementById('cancha');
+const ctx2 = canva2.getContext('2d');
+
+ctx2.beginPath();
+ctx2.strokeStyle = '#eee';
+ctx2.arc(100, 75, 50, 0, 2 * Math.PI);
+ctx2.stroke();
