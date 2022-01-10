@@ -3,8 +3,6 @@
 const canvas = document.getElementById('cancha');
 const ctx = canvas.getContext('2d');
 
-console.log(ctx);
-
 ctx.strokeStyle = '#eee';
 ctx.fillStyle = '#eee';
 ctx.lineWidth = 5;
@@ -53,3 +51,5 @@ const smileFace = () => {
     ctx.stroke();
 }
 smileFace();
+
+window.location
