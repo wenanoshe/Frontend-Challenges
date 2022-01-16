@@ -1,0 +1,93 @@
+/* Colors */
+/* $white: hsl(0, 0%, 100%); //bg */
+/*  $DarkBlue: hsl(230, 17%, 14%);//(Text) */
+.overview {
+  /* card when white */
+  /* --------------- */
+}
+.overview__cardBox {
+  height: 40%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15% 3%;
+}
+.overview__card {
+  width: 100%;
+  height: 100%;
+  padding: 1em 1.5em;
+  background-color: #252a41;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.overview__card:hover {
+  background-color: #374062;
+}
+.overview__w-card {
+  background-color: #f0f2fa;
+}
+.overview__w-card:hover {
+  background-color: #ced5ed;
+}
+.overview__top, .overview__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.overview__bottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.overview__stmnt {
+  color: #8b97c6;
+}
+.overview__number {
+  font-size: 2em;
+}
+.overview__card:nth-child(1) .overview__percent, .overview__card:nth-child(3) .overview__percent, .overview__card:nth-child(4) .overview__percent, .overview__card:nth-child(5) .overview__percent, .overview__card:nth-child(6) .overview__percent {
+  color: #1db489;
+}
+.overview__card:nth-child(1) .overview__arrow, .overview__card:nth-child(3) .overview__arrow, .overview__card:nth-child(4) .overview__arrow, .overview__card:nth-child(5) .overview__arrow, .overview__card:nth-child(6) .overview__arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: #1db489;
+}
+.overview__card:nth-child(2) .overview__arrow, .overview__card:nth-child(7) .overview__arrow, .overview__card:nth-child(8) .overview__arrow, .overview__card:nth-child(2) .overview__percent, .overview__card:nth-child(7) .overview__percent, .overview__card:nth-child(8) .overview__percent {
+  color: #dc414c;
+}
+
+/* MEDIA FOR MORE SMALL SCREENS AND TABLETS*/
+@media screen and (max-width: 1220px) {
+  .overview__cardBox {
+    height: 70vh;
+    margin-bottom: 3em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 8% 5%;
+  }
+}
+@media screen and (max-width: 840px) {
+  .overview {
+    margin-top: 5em;
+  }
+}

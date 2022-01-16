@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="styles/css/normalize.css">
+  <link rel="stylesheet" href="styles/css/styles.css">
+  <link rel="stylesheet" href="styles/css/general.css">
+  <link rel="stylesheet" href="styles/css/header.css">
+  <link rel="stylesheet" href="styles/css/section-top.css">
+  <link rel="stylesheet" href="styles/css/section-bottom.css">
+  
+  <title>Social Media info | Frontend Mentor</title>
+</head>
+<body id="body">
+  <div class="container">
+    <!-- first dashboard section -->
+
+    <section class="dash"> 
+
+      <div class="dash__hedda">
+        <div class="dash__titleBox">
+          <h1 class="dash__title">Social Media Dashboard</h1> 
+          <span class="dash__subtitle">Total Followers: 23,004</span></div>
+        <div class="dash__switchBox">
+            <p class="dash__p" id="switch-txt">Dark Mode</p>
+            <button class="dash__d-switch" id="switcher"><span class="dash__d-ball" id="btnBall"></span></button>
+        </div>
+      </div>
+
+      <div class="dash__cardsBox">
+
+        <div class="dash__card topCard" > <!-- first card -->
+          <div class="dash__media">
+            <img src="/images/icon-facebook.svg" class="dash__icon">
+            <span class="dash__usr">@wenanoshe</span>
+          </div>
+          <div class="dash__info">
+            <b class="dash__number">1987</b>
+            <span class="dash__followers">FOLLOWERS</span>
+          </div>
+          <div class="dash__today">
+            <i class="dash__arrow fas fa-sort-down"></i>
+            <b class="dash__stmnt">12 Today</b>
+          </div>
+        </div>
+
+        <div class="dash__card topCard" > <!-- second card -->
+          <div class="dash__media">
+            <img class="dash__icon" src="/images/icon-twitter.svg">
+            <span class="dash__usr">@wenanoshe</span>
+          </div>
+          <div class="dash__info">
+            <b class="dash__number">1044</b>
+            <span class="dash__followers">FOLLOWERS</span>
+          </div>
+          <div class="dash__today">
+            <i class="dash__arrow fas fa-sort-down"></i>
+            <b class="dash__stmnt">99 Today</b>
+          </div>
+        </div>
+
+        <div class="dash__card topCard" > <!-- thirth card -->
+          <div class="dash__media">
+            <img class="dash__icon" src="/images/icon-instagram.svg">
+            <span class="dash__usr">@wenanosheC</span>
+          </div>
+          <div class="dash__info">
+            <b class="dash__number">11k</b>
+            <span class="dash__followers">FOLLOWERS</span>
+          </div>
+          <div class="dash__today">
+            <i class="dash__arrow fas fa-sort-down"></i>
+            <b class="dash__stmnt">1099 Today</b>
+          </div>
+        </div>
+
+        <div class="dash__card topCard" > <!-- fourth card -->
+          <div class="dash__media">
+            <img class="dash__icon" src="/images/icon-youtube.svg">
+            <span class="dash__usr">wenanoshe</span>
+          </div>
+          <div class="dash__info">
+            <b class="dash__number">8239</b>
+            <span class="dash__followers">FOLLOWERS</span>
+          </div>
+          <div class="dash__today">
+            <i class="dash__arrow dash__arrow-red fas fa-sort-down"></i>
+            <b class="dash__stmnt dash__stmnt-red">144 Today</b>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <!-- second section -->
+    <section class="overview">
+      <h1 class="overview__title">Overview - Today</h1>
+
+      <div class="overview__cardBox">
+        <!-- facebook -->
+        <div class="overview__card bottomCard">
+          <div class="overview__top">
+            <b class="overview__stmnt">Page Views</b>
+            <img src="/images/icon-facebook.svg">
+          </div>
+          <div class="overview__bottom">
+            <b class="overview__number">87</b>
+            <div class="overview__pcont">
+              <i class="overview__arrow fas fa-sort-down"></i>
+              <b class="overview__percent">3%</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview__card bottomCard">
+          <div class="overview__top">
+            <b class="overview__stmnt">Likes</b>
+            <img src="/images/icon-facebook.svg">
+          </div>
+          <div class="overview__bottom">
+            <b class="overview__number">52</b>
+            <div class="overview__pcont">
+              <i class="overview__arrow fas fa-sort-down"></i>
+              <b class="overview__percent">2%</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- instagram -->
+        <div class="overview__card bottomCard">
+          <div class="overview__top">
+            <b class="overview__stmnt">Likes</b>
+            <img src="/images/icon-instagram.svg">
+          </div>
+          <div class="overview__bottom">
+            <b class="overview__number">5462</b>
+            <div class="overview__pcont">
+              <i class="overview__arrow fas fa-sort-down"></i>
+              <b class="overview__percent">2257%</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview__card bottomCard">
+          <div class="overview__top">
+            <b class="overview__stmnt">Profile Views</b>
+            <img src="/images/icon-instagram.svg">
+          </div>
+          <div class="overview__bottom">
+            <b class="overview__number">52k</b>
+            <div class="overview__pcont">
+              <i class="overview__arrow fas fa-sort-down"></i>
+              <b class="overview__percent">0%</b>
+            </div>
+          </div>
+        </div>
+
+      <!-- twiter -->
+      <div class="overview__card bottomCard">
+        <div class="overview__top">
+          <b class="overview__stmnt">Retweets</b>
+          <img src="/images/icon-twitter.svg">
+        </div>
+        <div class="overview__bottom">
+          <b class="overview__number">117</b>
+          <div class="overview__pcont">
+            <i class="overview__arrow fas fa-sort-down"></i>
+            <b class="overview__percent">303%</b>
+          </div>
+        </div>
+      </div>
+      
+      <div class="overview__card bottomCard">
+        <div class="overview__top">
+          <b class="overview__stmnt">Likes</b>
+          <img src="/images/icon-twitter.svg">
+        </div>
+        <div class="overview__bottom">
+          <b class="overview__number">507</b>
+          <div class="overview__pcont">
+            <i class="overview__arrow fas fa-sort-down"></i>
+            <b class="overview__percent">553%</b>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- youtube -->
+      <div class="overview__card bottomCard">
+        <div class="overview__top">
+          <b class="overview__stmnt">Likes</b>
+          <img src="/images/icon-youtube.svg">
+        </div>
+        <div class="overview__bottom">
+          <b class="overview__number">107</b>
+          <div class="overview__pcont">
+            <i class="overview__arrow fas fa-sort-down"></i>
+            <b class="overview__percent">19%</b>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview__card bottomCard">
+        <div class="overview__top">
+          <b class="overview__stmnt">Total Views</b>
+          <img src="/images/icon-youtube.svg">
+        </div>
+        <div class="overview__bottom">
+          <b class="overview__number">1407</b>
+          <div class="overview__pcont">
+            <i class="overview__arrow fas fa-sort-down"></i>
+            <b class="overview__percent">12%</b>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </section>
+  </div>
+   
+   <script src="https://kit.fontawesome.com/9b83600627.js" crossorigin="anonymous"></script>
+   <script src="scripts/script.js"></script>
+</body>
+</html>
