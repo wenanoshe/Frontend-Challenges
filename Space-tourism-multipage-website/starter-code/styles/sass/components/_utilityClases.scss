@@ -1,0 +1,28 @@
+@use '../base/mixvars' as *;
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-description {
+    font-family: $barlow;
+    font-size: 18px;
+}
+
+.content-title {
+    text-transform: uppercase;
+    font-family: $barlow-condensed;
+    font-size: 28px;
+    font-weight: 100;
+    letter-spacing: 4px;
+
+    & b {
+        font-weight: bold;
+        color: $dark-blue-light;
+        margin-right: 1em;
+    }
+}
+
+.pad-content { //give a padding to the main file
+    margin: 4em 10% 0 5em;
+}

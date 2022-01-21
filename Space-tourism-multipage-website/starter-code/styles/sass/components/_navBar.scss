@@ -1,0 +1,65 @@
+@use '../base/mixvars' as *;
+
+.nav {
+    @include flex(space-between, center);
+
+    &__ul {
+        height: 6em;
+        min-width: 50%;
+        padding: 0 5em;
+        
+        font-family: $barlow-condensed;
+        list-style: none;
+        
+        background-color: $dark-blue-light;
+        color: $white;
+        filter: blur(2);
+
+        @include flex(space-between, center);
+    }
+
+    &__item {
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    &__link {
+        color: $white;
+        display: block;
+        height: 100%;
+        letter-spacing: 3px;
+        font-size: 1.2em;
+        @include flex(center, center);
+        
+        &:hover::before {
+            @include before(100%, 3px);
+            background-color: $light-blue;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        & span:first-child {
+            margin-right: .5em;
+        }
+    }
+
+    .active__link {
+        &::before {
+            @include before(100%, 3px);
+            background-color: $white;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    &__line-decoration {
+        width: 30%;
+        height: 2px;
+        background-color: $light-blue;
+        position: relative;
+        right: -10%;
+    }
+}

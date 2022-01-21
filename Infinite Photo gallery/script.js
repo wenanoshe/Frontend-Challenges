@@ -5,7 +5,11 @@ const createImage = () => {
     
     fetch('https://picsum.photos/300/400').then(response => {
         img.setAttribute('src', response.url);
+    }).catch(err => {
+        console.log(err);
+        console.log(gallery.children.length);
     });
+
     return img;
 }
 
@@ -22,7 +26,9 @@ const loadImages = (times, imagesContainer) => {
 }
 
 const checkVisivility = (entries) => {
-    if (entries[0].isIntersecting) loadImages(6, gallery);
+    if (entries[0].isIntersecting) {
+        loadImages(6, gallery);
+    };
     /* If the last img is been intersected, loads 5 more images*/
 }
 

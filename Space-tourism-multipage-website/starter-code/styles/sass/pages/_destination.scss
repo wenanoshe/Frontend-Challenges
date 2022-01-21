@@ -1,0 +1,107 @@
+@use '../base/mixvars'as *;
+
+.body-destination {
+    background-image: url(../../../assets/destination/background-destination-desktop.jpg);
+}
+
+.destination {
+    &__content {
+        width: 100%;
+        @include flex(center);
+    }
+
+    &__imgBox {
+        flex-grow: 2;
+        // width: 20em;
+        height: 23em;
+    }
+
+    &__img {
+        height: 100%;
+        margin-left: 3em;
+    }
+    
+    &__context {
+        max-width: 40%;
+        @include flex(space-between, stretch, column);
+    }
+
+    &__ul {
+        width: 70%;
+        height: 2em;
+        list-style: none;
+        font-family: $barlow-condensed;
+        text-align: center;
+        @include flex(space-between, flex-start);
+    }
+
+    &__item {
+        height: 100%;
+    }
+    
+    &__link {
+        display: block;
+        height: 100%;
+        position: relative;
+        letter-spacing: 3px;
+
+        &:hover::before {
+            @include before(100%, 3px);
+            background-color: $light-blue;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__active-link::before {
+        background-color: $white;
+    }
+
+    &__info {
+        flex-grow: 2;
+        margin-top: 1em;
+        max-height: max-content;
+        // @include flex(space-between, flex-start, column);
+    }
+
+    &__destination {
+        font-family: $belefair;
+        font-weight: lighter;
+        font-size: 100px;
+    }
+
+    &__description {
+        margin-top: 1em;
+    }
+
+    &__estimate {
+        width: 100%;
+        margin-top: 2em;
+        padding-top: 1em;
+        border-top: 2px solid $desatured-dark-blue-light;
+
+        @include flex(space-between, center);
+    }
+
+    &__distance,
+    &__timeTavel {
+        height: 4em;
+        @include flex(space-between, flex-start, column);
+
+        & span:first-child {
+            font-family: $barlow-condensed;
+            letter-spacing: 2px;
+            color: $light-blue;
+            text-transform: uppercase;
+        }
+        
+        & span:last-child {
+            text-transform: uppercase;
+            font-family: $belefair;
+            font-size: 2em;
+        }
+    }
+
+    
+}
