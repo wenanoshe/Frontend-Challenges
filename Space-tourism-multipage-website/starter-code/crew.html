@@ -13,7 +13,10 @@
   <link rel="stylesheet" href="styles/css/normalize.css">
   <link rel="stylesheet" href="styles/css/main.min.css">
 
-  
+  <!-- scripts -->
+  <script defer src="scripts/navBar.js"></script>
+  <script defer src="scripts/crew.js"></script>
+
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body class="body-crew">
@@ -47,16 +50,18 @@
       <h1 class="crew__title content-title"><b>02</b><span>Meet your crew</span></h1>
       
       <div class="crew__content">
-        <h2 class="crew__character"><span>Commander</span><span>Douglas Hurley</span></h2>
+        <h2 class="crew__character">
+          <span id="role">Commander</span>
+          <span id="name">Douglas Hurley</span></h2>
         <p class="crew__characterDescription text-description">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
       </div>
 
-      <div class="crew__changer">
-        <span class="crew__sec"></span>
-        <span class="crew__sec"></span>
-        <span class="crew__sec"></span>
-        <span class="crew__sec"></span>
-      </div>
+      <nav class="crew__changer">
+        <button class="crew__dot" name="Douglas Hurley"></button>
+        <button class="crew__dot" name="Mark Shuttleworth"></button>
+        <button class="crew__dot" name="Victor Glover"></button>
+        <button class="crew__dot" name="Anousheh Ansari"></button>
+      </nav>
     </div>
 
     <div class="crew__right">

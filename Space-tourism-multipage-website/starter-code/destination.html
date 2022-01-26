@@ -13,7 +13,10 @@
   <link rel="stylesheet" href="styles/css/normalize.css">
   <link rel="stylesheet" href="styles/css/main.min.css">
 
-  
+  <!-- scripts -->
+  <script defer src="scripts/navBar.js"></script>
+  <script defer src="scripts/destination.js"></script>
+
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body class="body-destination">
@@ -53,25 +56,25 @@
       <div class="destination__context">
         <nav class="destination__nav">
           <ul class="destination__ul">
-            <li class="destination__item"><a class="destination__link" href="moon">MOON</a></li>
-            <li class="destination__item"><a class="destination__link" href="mars">MARS</a></li>
-            <li class="destination__item"><a class="destination__link" href="europa">EUROPA</a></li>
-            <li class="destination__item"><a class="destination__link" href="titan">TITAN</a></li>
+            <li class="destination__item"><button class="destination__link" name="Moon">MOON</button></li>
+            <li class="destination__item"><button class="destination__link" name="Mars">MARS</button></li>
+            <li class="destination__item"><button class="destination__link" name="Europa">EUROPA</button></li>
+            <li class="destination__item"><button class="destination__link" name="Titan">TITAN</button></li>
           </ul>
         </nav>
 
         <div class="destination__info">
-          <h2 class="destination__destination">MOON</h2>
+          <h2 class="destination__destination">Moon</h2>
           <div class="destination__description text-description">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</div>
 
           <div class="destination__estimate">
             <div class="destination__distance">
               <span>Avg. distance</span>
-              <span>384,400 km</span>
+              <span id="distance">384,400 km</span>
             </div>
             <div class="destination__timeTavel">
               <span>Est. travel time</span>
-              <span>3 days</span>
+              <span id="travel">3 days</span>
             </div>
           </div>
         </div>

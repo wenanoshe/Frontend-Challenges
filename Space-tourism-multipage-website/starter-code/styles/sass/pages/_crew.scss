@@ -39,17 +39,24 @@
         @include flex(space-between, center);
     }
 
-    &__sec {
+    &__dot {
         width: 1em;
         height: 1em;
         display: inline-block;
         border-radius: 2em;
-
+        border: none;
+        
         background-color: $dark-blue-light;
         cursor: pointer;
+
+        @include transition(transform);
+
+        &:active {
+            transform: scale(50%);
+        }
     }
 
-    .active-sec {
+    .active-dot {
         background-color: $white;
     }
 

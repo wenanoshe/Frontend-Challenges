@@ -7,6 +7,8 @@
 .text-description {
     font-family: $barlow;
     font-size: 18px;
+    color: $light-blue;
+    line-height: 1.5em;
 }
 
 .content-title {
@@ -24,5 +26,5 @@
 }
 
 .pad-content { //give a padding to the main file
-    margin: 4em 10% 0 5em;
+    margin: 3em 10% 0 5em;
 }

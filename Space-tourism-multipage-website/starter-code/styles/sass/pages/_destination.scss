@@ -44,6 +44,11 @@
         height: 100%;
         position: relative;
         letter-spacing: 3px;
+        background: none;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        color: $white;
 
         &:hover::before {
             @include before(100%, 3px);
@@ -54,8 +59,12 @@
         }
     }
 
-    &__active-link::before {
+    .active-link::before {
         background-color: $white;
+        @include before(100%, 3px);
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 
     &__info {
@@ -69,6 +78,7 @@
         font-family: $belefair;
         font-weight: lighter;
         font-size: 100px;
+        text-transform: uppercase;
     }
 
     &__description {

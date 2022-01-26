@@ -1,0 +1,73 @@
+@use '../base/mixvars' as *;
+
+.body-technology {
+    background-image: url(../../../assets/technology/background-technology-desktop.jpg);
+}
+
+.technology {
+    margin-right: 0;
+
+    &__content {
+        @include flex(space-between);
+    }
+
+    &__left {
+        @include flex(space-between, center);
+        flex-shrink: 3;
+        margin-right: 7em;
+    }
+
+    &__nav {
+        height: 100%;
+    }
+
+    &__ul {
+        list-style: none;
+        height: 100%;
+        padding: 70% 0;
+        @include flex(space-between, stretch, column);
+    }
+
+    &__li {
+        width: 80px; height: 80px;
+        font-family: $belefair;
+        font-size: 32px;
+        cursor: pointer;
+        border: 1px solid $light-blue;
+        border-radius: 50%;
+        @include flex(center, center);
+
+        &:hover {
+            border: 1px solid $white;
+        }
+    }
+
+    .active-li {
+        color: $dark-blue;
+        background-color: $white;
+        border: 1px solid $white;
+    }
+
+    &__context {
+        max-width: 70%;
+    }
+
+    &__machines {
+        @include flex(stretch, stretch, column);
+        text-transform: uppercase;
+        font-weight: lighter;
+
+        & span:first-child {
+            color: $gray;
+            font-family: $barlow-condensed;
+        }
+        
+        & span:last-child {
+            font-family: $belefair;
+            font-size: 56px;    
+        }
+    }
+
+    &__description {margin-top: 1em;}
+    
+}
