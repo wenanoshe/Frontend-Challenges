@@ -9,3 +9,9 @@ body {
 a {
   color: $white  
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+}

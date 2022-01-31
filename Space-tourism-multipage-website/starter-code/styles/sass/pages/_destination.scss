@@ -115,3 +115,41 @@
 
     
 }
+
+@media screen and (max-width: 768px) {
+    .body-destination {
+        background-image: url(../../../assets/destination/background-destination-tablet.jpg);
+    }
+    
+    .destination {
+        min-height: 70vh;
+        margin-left: 2em;
+        
+        &__content {
+            @include flex(space-between, center, column);
+            text-align: center;
+        }       
+
+        &__img {
+            margin: 0 auto;
+        }
+
+        &__context {
+            max-width: 100%;
+            align-items: center;
+        }
+
+        &__nav {
+            width: 60%;
+            margin-top: 2em;
+        }
+
+        &__ul {
+            width: 100%;
+        }
+
+        &__estimate {
+            justify-content: space-around;
+        }
+    }
+}

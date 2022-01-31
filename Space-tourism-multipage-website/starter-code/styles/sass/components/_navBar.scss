@@ -6,7 +6,8 @@
     &__ul {
         height: 6em;
         min-width: 50%;
-        padding: 0 5em;
+        max-width: 70%;
+        padding: 0 6%;
         
         font-family: $barlow-condensed;
         list-style: none;
@@ -22,6 +23,7 @@
         height: 100%;
         position: relative;
         cursor: pointer;
+        text-align: center;
     }
     
     &__link {
@@ -31,6 +33,7 @@
         letter-spacing: 3px;
         font-size: 1.2em;
         @include flex(center, center);
+        // margin-right: 1em;
         
         &:hover::before {
             @include before(100%, 3px);
@@ -41,7 +44,7 @@
         }
 
         & span:first-child {
-            margin-right: .5em;
+            margin-right: 1%;
         }
     }
 
@@ -60,6 +63,27 @@
         height: 2px;
         background-color: $light-blue;
         position: relative;
-        right: -10%;
+        right: -5%;
+        @media screen and (max-width: 1000px) {
+            right: -3%;
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        &__line-decoration {
+            display: none;
+        }
+        
+        &__ul {
+            min-width: 70%;
+        }
+
+        &__link span:first-child {
+            display: none;
+        }
+            
     }
 }

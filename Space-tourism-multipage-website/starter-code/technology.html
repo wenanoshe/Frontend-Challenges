@@ -15,6 +15,7 @@
 
   <!-- scripts -->
   <script defer src="scripts/navBar.js"></script>
+  <script defer src="scripts/technology.js"></script>
 
   <title>Frontend Mentor | Space tourism website</title>
 </head>
@@ -50,20 +51,22 @@
       <div class="technology__left">
         <nav class="technology__nav">
           <ul class="technology__ul">
-            <li class="technology__li">1</li>
-            <li class="technology__li">2</li>
-            <li class="technology__li">3</li>
+            <li><button name="Launch vehicle" class="technology__btn active-btn">1</button></li>
+            <li><button name="Spaceport" class="technology__btn">2</button></li>
+            <li><button name="Space capsule" class="technology__btn">3</button></li>
           </ul>
         </nav>
 
         <div class="technology__context">
-          <h2 class="technology__machines"><span>The terminology...</span><span>Launch vehicle</span></h2>
+          <h2 class="technology__machines"><span>The terminology...</span><span id="techTitle">Launch vehicle</span></h2>
           <p class="technology__description text-description">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
         </div>
       </div>
 
       <div class="technology__right">
-        <img class="technology__img" src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="Launch vehicle">
+        <img class="technology__img" 
+          src="./assets/technology/image-launch-vehicle-portrait.jpg"
+          alt="Launch vehicle">
       </div>
     </div>
         

@@ -28,7 +28,12 @@
         @include flex(space-between, stretch, column);
     }
 
-    &__li {
+    &__btn {
+        background: none;
+        color: $light-blue;
+        border: none;
+        cursor: pointer;
+        
         width: 80px; height: 80px;
         font-family: $belefair;
         font-size: 32px;
@@ -38,11 +43,12 @@
         @include flex(center, center);
 
         &:hover {
+            color: $white;
             border: 1px solid $white;
         }
     }
 
-    .active-li {
+    .active-btn {
         color: $dark-blue;
         background-color: $white;
         border: 1px solid $white;
@@ -70,4 +76,66 @@
 
     &__description {margin-top: 1em;}
     
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        margin-left: 2em;
+    }
+    .body-technology {
+        background-image: url(../../../assets/technology/background-technology-tablet.jpg);
+        padding: 0;
+    }
+
+    .technology {
+        margin-left: 0;
+
+        &__title {margin-left: 2em;}
+        
+        &__content {
+            max-height: 70vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2,1fr);
+        }
+
+        &__right {
+            width: 100%;
+            height: 19.4em;
+
+            grid-row: 1 / 2;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+
+        &__left {
+            margin-right: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &__nav {
+            width: 100%;
+            margin-top: 3em;
+            height: max-content
+        }
+
+        &__ul {
+            width: 50%;
+            height: max-content;
+            padding: 0;
+            margin: 0 auto;
+            @include flex(space-between, center,row);
+        }
+
+        &__context {
+            margin-top: 3em;
+        }
+    }
+
 }
