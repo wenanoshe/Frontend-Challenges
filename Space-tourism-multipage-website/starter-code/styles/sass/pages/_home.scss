@@ -14,19 +14,18 @@
     &__title {
         font-family: $barlow-condensed;
         @include flex(space-between, stretch, column);
-        font-size: 28px;
+        font-size: 1.75em;
         font-weight: lighter;
     }
 
     &__heading {
-        font-size: 150px;
+        font-size: 9.375em;
         font-family: $belefair;
         font-weight:lighter;
     }
 
     &__button {
-        width: 15em;
-        height: 15em;
+        width: 15em; height: 15em;
         border: none;
         border-radius: 50%;
         position: relative;
@@ -74,8 +73,25 @@
     }
 }
 
-// @media screen and(max-width: 600px) {
-//     .home-body {
+@media screen and(max-width: 600px) {
+    .home {
+        font-size: 14px;
 
-//     }
-// }
+        &__title {
+            font-size: 1.8em;
+        }
+
+        &__heading {
+            font-size: 4.5em;
+        }
+        
+        &__button {
+            width: 16em; height: 16em;
+
+            & a {
+                font-size: 2em;
+            }
+        }
+    }
+    
+}

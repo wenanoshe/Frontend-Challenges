@@ -60,10 +60,6 @@
         background-color: $white;
     }
 
-    &__right {
-        // height: 100%;
-    }
-
     &__img{
         height: 100%;
     }
@@ -102,6 +98,40 @@
 
         &__img {
             height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .crew {
+        height: max-content;
+        font-size: 14px;
+        text-align: center;
+        display: grid;
+        grid-template: repeat(2, minmax(223px, 1fr)) / 100%;
+        gap: 2em;
+        justify-items: center;
+
+        &__right {
+            margin-top: 0;
+            grid-row-start: 1;
+            width: 80%; 
+            min-height: 100%;
+            border-bottom: 2px solid $dark-blue-light;
+        }
+
+        &__img {height: 100%;}
+
+        &__title {
+            font-size: 1.14em;
+            align-self: center;
+        }
+        & #name {
+            font-size: 1.7em;
+        }
+
+        &__characterDescription {
+            max-width: 90vw;
         }
     }
 }

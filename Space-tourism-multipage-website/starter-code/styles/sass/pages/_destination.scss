@@ -77,7 +77,7 @@
     &__destination {
         font-family: $belefair;
         font-weight: lighter;
-        font-size: 100px;
+        font-size: 6.25em;
         text-transform: uppercase;
     }
 
@@ -151,5 +151,37 @@
         &__estimate {
             justify-content: space-around;
         }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .destination {
+        margin: 0;    
+        font-size: 14px;
+         
+        &__title {
+            text-align: center;
+        }
+
+        &__description {
+            max-width: 70vw;
+        }
+
+        &__estimate {
+            padding: 0;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        &__distance,
+        &__timeTavel {
+            margin-top: 2em;
+            text-align: center;
+            align-items: center;
+        }
+
+        &__nav {width: 80%;}
     }
 }

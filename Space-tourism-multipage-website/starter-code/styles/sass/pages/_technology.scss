@@ -139,3 +139,16 @@
     }
 
 }
+
+@media screen and (max-width: 600px) {
+    .technology {
+        &__ul {
+            width: 70%;
+        }
+
+        &__description {
+            max-width: 80vw;
+            margin-bottom: 3em;
+        }
+    }
+}
