@@ -16,3 +16,18 @@ a {
     padding-top: 0;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .home-body, 
+  .body-technology, 
+  .body-destination, 
+  .body-crew {
+      padding: 0;
+  }
+
+  .home, .destination, 
+  .crew, .technology {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

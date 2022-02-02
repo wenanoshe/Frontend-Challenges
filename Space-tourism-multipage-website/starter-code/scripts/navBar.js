@@ -23,3 +23,17 @@ switch (location.pathname) {
         console.log('error');
         break;
 }
+
+/* === When is in mobile === */
+const hamburgerBtn = document.getElementById('hamburguer');
+hamburgerBtn.addEventListener('click', () => {
+    navBar.classList.toggle('visible');
+    /* This is the img inside the button, and i am changing it src
+        If has the class visible, change to close button, else hamburguer */
+    if(navBar.classList.contains('visible')) {
+        hamburgerBtn.children[0].setAttribute('src', 'assets/shared/icon-close.svg');
+    } else {
+        hamburgerBtn.children[0].setAttribute('src', 'assets/shared/icon-hamburger.svg');
+    }
+});
+

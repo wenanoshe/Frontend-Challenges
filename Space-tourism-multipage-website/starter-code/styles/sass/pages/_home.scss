@@ -62,9 +62,20 @@
 }
 
 @media screen and(max-width: 768px) {
+    .home-body {
+        background-image: url(../../../assets/home/background-home-tablet.jpg);    
+    }
+    
     .home {
         min-height: 80vh;
+        margin-left: 2em;
         text-align: center;
         @include flex(space-around, center, column)
     }
 }
+
+// @media screen and(max-width: 600px) {
+//     .home-body {
+//         background-image: url(../../../assets/home/background-home-mobile.jpg);    
+//     }
+// }
