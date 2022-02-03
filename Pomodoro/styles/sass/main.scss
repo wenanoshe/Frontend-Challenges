@@ -38,7 +38,7 @@ button {cursor: pointer;}
 
    &__btn {
       padding: 1em 1.5em;
-      font-size: .8em;
+      font-size: .9em;
       border:none;
       border-radius: $radius;
       background-color: transparent;
@@ -61,6 +61,7 @@ button {cursor: pointer;}
 .pomo-container {
    width: 80%; height: 23.64em;
    max-width: 23.64em;
+   min-width: 23.64em;
    max-height: 23.64em;
    border-radius: 50%;
 
@@ -109,9 +110,6 @@ button {cursor: pointer;}
 // --- The pomodoro timer ---
 .settings {
    &__btn {
-      box-shadow: 
-      -10px 0 50px $blueGray, 0 -10px 50px $blueGray,
-      10px 0 40px $dark-darkBluePlus, 0 10px 40px $dark-darkBluePlus;
       background-color: transparent;
       border:none;
       color: $lightGrayLess;
