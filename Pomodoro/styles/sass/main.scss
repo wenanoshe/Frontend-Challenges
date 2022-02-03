@@ -1,0 +1,129 @@
+@use 'base/mixin&vars' as *;
+
+/* === General === */
+body {
+   height: 100vh;
+
+   font-family: $Maven-Pro;
+   font-size: 14px;
+   font-weight: bold;
+   background-color: $darkBlue;
+}
+
+ul {list-style: none;}
+
+button {cursor: pointer;}
+
+/* === == === */
+
+/* === App === */
+.app {
+   width: 100%; height: 100%;
+   @include flex(space-between, center,column);
+   color: $white;
+   padding-bottom: 15%;
+}
+
+// --- modes ---turcoise
+.modes {
+   width: 80%;
+   &__ul {
+      width: 100%; height: max-content;
+
+      @include flex(space-between, center);
+      background-color: $dark-darkBlue;
+      padding: .5em;
+      border-radius: $radius;
+   }
+
+   &__btn {
+      padding: 1em 1.5em;
+      font-size: .8em;
+      border:none;
+      border-radius: $radius;
+      background-color: transparent;
+      color: $blueGray;
+      font-weight: bold;
+
+      &:active {
+         color: $lightGray;
+      }
+   }
+
+   .active-mode {
+      background-color: $pink;
+      color: $darkBlue;
+   }
+   
+}
+
+// --- The pomodoro timer ---
+.pomo-container {
+   width: 80%; height: 23.64em;
+   max-width: 23.64em;
+   max-height: 23.64em;
+   border-radius: 50%;
+
+   background-image: linear-gradient(135deg,$dark-darkBlue 20%, $blueGray);
+   @include flex(center, center);
+
+   box-shadow: 
+   -10px 0 50px $blueGray, 0 -10px 50px $blueGray,
+   10px 0 40px $dark-darkBluePlus, 0 10px 40px $dark-darkBluePlus;
+}
+
+.pomo {
+   width: 85%; height: 85%;
+   user-select: none;
+   border-radius: 50%;
+   background-color: $dark-darkBlue;
+   position: relative;
+
+   @include flex(center, center, column);
+
+   &__timer {
+      font-family: $Open-Sans;
+      font-size: 6em;
+
+      @include flex(center, center);
+   } 
+
+   &__status {
+      position: absolute;
+      bottom: 15%;
+      
+      &-button {
+         background-color: transparent;
+         border:none;
+         color: $lightGrayLess;
+         
+         &:active {
+            color: $white;
+         }
+         
+         & i {font-size: 2em;}
+      }
+   }
+}
+
+// --- The pomodoro timer ---
+.settings {
+   &__btn {
+      box-shadow: 
+      -10px 0 50px $blueGray, 0 -10px 50px $blueGray,
+      10px 0 40px $dark-darkBluePlus, 0 10px 40px $dark-darkBluePlus;
+      background-color: transparent;
+      border:none;
+      color: $lightGrayLess;
+
+      &:active {
+         color: $white;
+      }
+
+      & i {font-size: 2em;}
+   }
+}
+
+
+
+/* === == === */

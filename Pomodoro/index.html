@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icons -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/css/normalize.css">
+    <link rel="stylesheet" href="styles/css/main.min.css">
+
+
+    <!-- scripts -->
+    <script src="scripts/main.js" type="module"></script>
+    <title>Pomodoro</title>
+</head>
+<body>
+    <div class="app">
+    <h1 class="title">Pomodoro</h1>
+
+    <nav class="modes">
+        <ul class="modes__ul">
+            <li class="modes__li"><button class="modes__btn active-mode">Pomodoro</button></li>
+            <li class="modes__li"><button class="modes__btn">Short break</button></li>
+            <li class="modes__li"><button class="modes__btn">Long Break</button></li>
+        </ul>
+    </nav>
+
+    <div class="pomo-container">
+        <div class="pomo">
+            <div class="pomo__timer">
+                <span class="pomo__minutes">17</span>
+                <span class="pomo__colon">:</span>
+                <span class="pomo__seconds">59</span>
+            </div>
+            <div class="pomo__status">
+                <button class="pomo__status-button">
+                    <i class="fi fi-br-play"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings">
+        <button class="settings__btn"><i class="fi fi-rr-settings"></i></button>
+    </div>
+       
+    </div>    
+</body>
+</html>
+
+<!-- 
+    Settings: <i class="fi fi-br-settings"></i>
+    Play: <i class="fi fi-br-play"></i>
+    Pause: <i class="fi fi-br-pause"></i>
+
+ -->

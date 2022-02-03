@@ -1,0 +1,46 @@
+/* == Fonts == */
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+$Maven-Pro: 'Maven Pro', sans-serif;
+$Open-Sans: 'Open Sans', sans-serif;
+
+/* === Colors === */
+// --light
+    $white: hsl(232, 100%, 94%);
+    $lightGray: hsl(231, 70%, 92%);
+    $lightGrayLess: hsl(231, 60%, 85%);
+    $turcoise: hsl(173, 75%, 49%);
+    $fluorsecentBlue: hsl(183, 89%, 71%);
+    $pink: hsl(358, 79%, 70%);
+
+// --dark
+    $blueGray: hsl(227, 35%, 28%);
+    $darkBlue: #1c243c;
+    $dark-darkBlue: hsl(224, 47%, 10%);
+    $dark-darkBluePlus: hsl(224, 47%, 5%);
+
+/* === === === */
+
+/* === Mixins === */
+@mixin flex($jc: stretch, $ai: stretch, $fd: row) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin before($width, $height) {
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+}
+
+@mixin transition($target, $duration: 300ms) {
+    transition: $target $duration;
+}
+/* === --------- === */
+
+/* === Mixins === */
+$radius: 10em;
+
+/* === --------- === */
