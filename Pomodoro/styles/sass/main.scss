@@ -69,6 +69,10 @@ button {cursor: pointer;}
          height: 5em;
          padding: .1em .5em;
       }
+
+      &__btn:first-child {
+         height: 54.1667px;
+      }
    }
 }
 
