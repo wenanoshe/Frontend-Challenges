@@ -19,16 +19,24 @@ button {cursor: pointer;}
 /* === App === */
 .app {
    width: 100%; height: 100%;
-   @include flex(space-between, center,column);
+   min-width: 20.17em;
+   @include flex(space-evenly, center,column);
    color: $white;
-   padding-bottom: 15%;
+   // padding-bottom: 15%;
+}
+
+.title {
+   // margin: 2em 0 1em;
+   font-size: 3em;
 }
 
 // --- modes ---turcoise
 .modes {
    width: 80%;
+   transform: translateY(-50%);
    &__ul {
       width: 100%; height: max-content;
+      min-width: 20.17em;
 
       @include flex(space-between, center);
       background-color: $dark-darkBlue;
@@ -55,14 +63,22 @@ button {cursor: pointer;}
       color: $darkBlue;
    }
    
+   @media (max-width: 413px) {
+      &__ul {
+         height: 5em;
+         padding: .1em .5em;
+      }
+   }
 }
 
 // --- The pomodoro timer ---
 .pomo-container {
+   // flex-grow: 3;
    width: 80%; height: 23.64em;
    max-width: 23.64em;
-   min-width: 23.64em;
    max-height: 23.64em;
+   min-width: 23.64em;
+   min-height: 23.64em;
    border-radius: 50%;
 
    background-image: linear-gradient(135deg,$dark-darkBlue 20%, $blueGray);
@@ -109,6 +125,7 @@ button {cursor: pointer;}
 
 // --- The pomodoro timer ---
 .settings {
+   margin-top: 3em;
    &__btn {
       background-color: transparent;
       border:none;
