@@ -102,6 +102,7 @@ button {cursor: pointer;}
    &__timer {
       font-family: $Open-Sans;
       font-size: 6em;
+      transform: translateY(-0.1em);
 
       @include flex(center, center);
    } 
