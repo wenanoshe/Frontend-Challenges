@@ -23,6 +23,7 @@ button {cursor: pointer;}
    @include flex(space-evenly, center,column);
    color: $white;
    // padding-bottom: 15%;
+   position: relative;
 }
 
 .title {
@@ -127,9 +128,13 @@ button {cursor: pointer;}
          & i {font-size: 2em;}
       }
    }
+   &:active {
+      transform: scale(.99);
+   }
 }
 
-// --- The pomodoro timer ---
+/* === Settings button === */
+
 .settings {
    margin-top: 3em;
    &__btn {
@@ -146,6 +151,149 @@ button {cursor: pointer;}
 }
 /* === == === */
 
+/* === Modal window === */
+.modal {
+   width: 90%;
+   height: 45%;
+   max-width: 30em;
+   max-height: 25em;
+   min-width: 331.2px;
+   margin: 0 2em;
+   padding: 2em;
+   
+   background-color: $white;
+   border-radius: 20px;
+   color: $dark-darkBlue;
+   
+   position: absolute;
+   top: auto; left: auto;
+   
+   
+   @include flex(space-between, center, column);
+   
+   opacity: 0;
+   visibility: hidden;
+   transform: scale(0.95);
+   transition: visibility 0s linear 0.3s, opacity 0.3s 0s, transform 0.3s;
+
+   
+   &__header, &__settings, &__color {width: 100%}
+   
+   &__header {
+      @include flex(space-between, center);
+      padding-bottom: 1em;
+      border-bottom: 1px solid $lightGrayLess;
+   }
+
+   &__close {
+      background: transparent;
+      border: none;
+   }
+
+   &__settings {
+      height: 80%;
+      min-height: max-content;
+      @include flex(space-between, stretch, column);
+   }
+
+   // ---- Changing the time section ----
+
+   // &__time {}
+
+   &__adjustTime {
+      width: 100%;
+      margin-top: 1em;
+      @include flex(space-between, center);
+      position: relative;
+      
+      & label {
+         display: block; 
+         max-width: 6em;
+      }
+   }
+
+   &__input {
+      width: 100%; height: 2em;
+      color: $darkBlue;
+      background-color: $lightGrayLess;
+      border: none;
+      border-radius: 5px;
+      padding-left: .5em;
+   }
+
+   // ---- Auto start section ----
+   &__options {
+      height: 20%;
+      @include flex(space-between, stretch, column);
+
+      &--option {
+         width: 100%;
+         @include flex (space-between);
+      }
+   }
+   
+   // ---- Choosing theme section ----
+   &__subtitle {text-transform: uppercase;}
+
+   &__choose-main-color {
+      @include flex(space-between, center);
+      // margin-top: 5em;
+      padding: 1em 0;
+   }
+
+   &__palette {
+      @include flex(space-between, center);
+      min-width: 40%;
+   }
+
+   &__color {
+      width: 2em; height: 2em;
+      position: relative;
+      appearance: none;
+      
+      &::before {
+         @include before(100%, 100%);
+         position: absolute;
+         border-radius: 50%;
+         top: 0; left: 0;
+         z-index: 100;
+         cursor: pointer;
+      }
+      
+      &:checked &::before{
+         background-color: red;
+      }
+
+      &:first-child::before {background-color: $pink;}
+      &:nth-child(2)::before {background-color: $turcoise;}
+      &:last-child::before {background-color: $purple;}
+   }
+
+
+   &__btn {
+      padding: .7em 2em;  
+      border-radius: 5em;
+      border: none;
+      background-color: $pink;
+      color: $white;
+      font-weight: bold;
+      position: absolute;
+      bottom: -1em; left: 37%;
+   }
+
+}
+
+.show-modal {
+   opacity: 1;
+   visibility: visible;
+   transform: scale(1.0);
+   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* === == === */
+
+
+
 /* === tablet and desktop view === */
 @media screen and(min-width: 700px) {
    body {
@@ -156,6 +304,10 @@ button {cursor: pointer;}
       max-width: 28em;
       &__btn {
          font-size: 1em;
+
+         &:hover {
+            color: $lightGray;
+         }
       }
    }
 }

@@ -38,7 +38,7 @@
             </div>
             <div class="pomo__status">
                 <button class="pomo__status-button">
-                    <i class="fi fi-br-play"></i>
+                    <i id="status" class="fi fi-br-play"></i>
                 </button>
             </div>
         </div>
@@ -46,6 +46,55 @@
 
     <div class="settings">
         <button class="settings__btn"><i class="fi fi-rr-settings"></i></button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modal__header">
+            <h2 class="modal__title">Settings</h2>
+            <button class="modal__close"><i class="fi fi-br-cross"></i></button>
+        </div>
+        <form class="modal__settings">
+            <div class="modal__time">
+                <h3 class="modal__time-title modal__subtitle">Time (minutes)</h3>
+                <div class="modal__adjustTime">
+                    <label for="pomodoro">
+                        <span>Pomodoro</span>
+                        <input class="modal__input" type="number" id="pomodoro" min="0" max="60" value="25">
+                    </label>
+                    <label for="short-break">
+                        <span>Long break</span>
+                        <input class="modal__input" type="number" id="short-break" min="0" max="60" value="5">
+                    </label>
+                    <label for="long-break">
+                        <span>Short break</span>
+                        <input class="modal__input" type="number" id="long-break" min="0" max="60" value="15"> 
+                    </label>
+                </div>
+            </div>
+
+            <div class="modal__options">
+                <div class="modal__options--option">
+                    <label for="autoBreak">Auto start break after work</label>
+                    <input type="checkbox" name="autostart" id="autoBreak">
+                </div>
+                <div class="modal__options--option">
+                    <label for="autoWork">Auto start work after break</label>
+                    <input type="checkbox" name="autostart" id="autoWork">
+                </div>
+            </div>
+
+            <div class="modal__choose-main-color">
+                <h3 class="modal__subtitle">Color</h3>
+                <div class="modal__palette">
+                    <input class="modal__color" type="radio" name="chooseColor" id="pink" checked>
+                    <input class="modal__color" type="radio" name="chooseColor" id="turcoise">
+                    <input class="modal__color" type="radio" name="chooseColor" id="purple">
+                </div>
+            </div>
+
+            <button class="modal__btn" id="applyChanges">Apply</button>
+        </form>
     </div>
        
     </div>    
