@@ -2,17 +2,6 @@
 
 /* === Functions === */
 
-const statusPlayOrPause = () => {
-   // Changing the icon depending if is play or pause
-   if (isStart) {
-      document.getElementById('status').classList.replace('fi-br-play', 'fi-br-pause');
-      isStart = false;
-   } else {
-      document.getElementById('status').classList.replace( 'fi-br-pause', 'fi-br-play');
-      isStart = true;
-   }
-}
-
 const updateInterfaceTimer = (min, sec) => {
    // Function that update the interface timer
    minutesEl = document.querySelector('.pomo__minutes');
@@ -24,28 +13,29 @@ const updateInterfaceTimer = (min, sec) => {
 
 const countdown = () => {
    // This is the interval that starts the count down
-   var interval = setInterval(() => {
+   if(!interval) {
+      interval = setInterval(() => {
       let minutes = Math.floor(currentPomo / 60);
       let seconds = currentPomo % 60;
       
       currentPomo = currentPomo - 1;
    
-      if(currentPomo == -1) clearInterval(interval);
-   
       console.log(minutes, seconds);
       updateInterfaceTimer(minutes, seconds);
    }, 1000);   
+   }
 }
 
 const runTimer = () => {
-   if(isStart) isStart = false;
-   else isStart = true; // stores true, the timer is runing
-   
+   let statusEl = document.getElementById('status');
+   if(statusEl.classList.contains('fi-br-play')){
+      statusEl.classList.replace('fi-br-play', 'fi-br-pause');
 
-   statusPlayOrPause();
-   
-   countdown(); // starts the countdown
-
+      countdown();
+   } else {
+      statusEl.classList.replace( 'fi-br-pause', 'fi-br-play');
+      clearInterval(interval);
+   }
 }
 
 // ---- Handdle the settings (modal window) ----
@@ -72,8 +62,8 @@ let currentPomo;
 let currentShortBreak;
 let currentLongBreak;
 
-let isStart = false;
-console.log(isStart + ' initial');
+let isRunning = false;
+let interval;
 
 const formEl = document.querySelector('.modal__settings');
 
@@ -99,8 +89,30 @@ let secondsEl = document.querySelector('.pomo__seconds');
 formEl.addEventListener('submit', e => e.preventDefault());
 getPomodoroValues();
 applySettingsBtn.addEventListener('click', getPomodoroValues);
+applySettingsBtn.addEventListener('click', showSettings);
 
 // When starts the pomodoro
 pomodoroEl.addEventListener('click', runTimer);
 
 /* === === === */
+
+
+// let inter;
+// let plus = 0;
+// let sstatus = false
+// const inn = () => {
+//    sstatus = true;
+//    if(sstatus) {
+//       inter = setInterval(() => {
+//          plus += 1;
+         
+//       console.log(plus);
+//       if(plus == 5) sstatus = false;
+//       if(sstatus == false)
+
+//       }, 100);
+//    }
+// }
+
+
+// inn();
