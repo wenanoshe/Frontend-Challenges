@@ -20,7 +20,6 @@ const countdown = () => {
       
       currentPomo = currentPomo - 1;
    
-      console.log(minutes, seconds);
       updateInterfaceTimer(minutes, seconds);
    }, 1000);   
    }
@@ -35,6 +34,7 @@ const runTimer = () => {
    } else {
       statusEl.classList.replace( 'fi-br-pause', 'fi-br-play');
       clearInterval(interval);
+      interval = null;
    }
 }
 
