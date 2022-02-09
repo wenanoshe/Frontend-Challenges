@@ -23,9 +23,9 @@
 
     <nav class="modes">
         <ul class="modes__ul">
-            <li class="modes__li"><button class="modes__btn active-mode">Pomodoro</button></li>
-            <li class="modes__li"><button class="modes__btn">Short break</button></li>
-            <li class="modes__li"><button class="modes__btn">Long Break</button></li>
+            <li class="modes__li"><button id="mode-pomodoro" class="modes__btn active-mode">Pomodoro</button></li>
+            <li class="modes__li"><button id="mode-shortBreak" class="modes__btn">Short break</button></li>
+            <li class="modes__li"><button id="mode-longBreak" class="modes__btn">Long Break</button></li>
         </ul>
     </nav>
 
@@ -60,15 +60,15 @@
                 <div class="modal__adjustTime">
                     <label for="pomodoro">
                         <span>Pomodoro</span>
-                        <input class="modal__input" type="number" id="pomodoro" min="0" max="60" value="25">
+                        <input class="modal__input" type="number" id="modal--setPomodoro" min="0" max="60" value="25">
                     </label>
                     <label for="short-break">
-                        <span>Long break</span>
-                        <input class="modal__input" type="number" id="short-break" min="0" max="60" value="5">
+                        <span>Short break</span>
+                        <input class="modal__input" type="number" id="modal--setShort-break" min="0" max="60" value="5">
                     </label>
                     <label for="long-break">
-                        <span>Short break</span>
-                        <input class="modal__input" type="number" id="long-break" min="0" max="60" value="15"> 
+                        <span>Long break</span>
+                        <input class="modal__input" type="number" id="modal--setLong-break" min="0" max="60" value="15"> 
                     </label>
                 </div>
             </div>

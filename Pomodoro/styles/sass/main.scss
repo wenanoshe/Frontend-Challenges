@@ -31,7 +31,7 @@ button {cursor: pointer;}
    font-size: 3em;
 }
 
-// --- modes ---turcoise
+// --- modes ---
 .modes {
    width: 80%;
    transform: translateY(-50%);
@@ -306,8 +306,12 @@ button {cursor: pointer;}
          font-size: 1em;
 
          &:hover {
-            color: $lightGray;
+            background-color: $darkBlue;
          }
+
+      }
+      .active-mode:hover {
+         background-color: $pink;
       }
    }
 }
