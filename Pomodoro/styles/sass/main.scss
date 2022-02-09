@@ -12,7 +12,10 @@ body {
 
 ul {list-style: none;}
 
-button {cursor: pointer;}
+button {
+   cursor: pointer;
+   -webkit-tap-highlight-color: transparent;
+}
 
 /* === == === */
 
