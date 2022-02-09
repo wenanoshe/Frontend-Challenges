@@ -14,7 +14,9 @@
 
 
     <!-- scripts -->
-    <script src="scripts/main.js" type="module"></script>
+    <script defer src="scripts/main.js" type="module"></script>
+    <script defer src="scripts/changeTheme.js"></script>
+
     <title>Pomodoro</title>
 </head>
 <body>
@@ -87,7 +89,7 @@
             <div class="modal__choose-main-color">
                 <h3 class="modal__subtitle">Color</h3>
                 <div class="modal__palette">
-                    <input class="modal__color" type="radio" name="chooseColor" id="pink" checked>
+                    <input class="modal__color" type="radio" name="chooseColor" id="pink" checked="true">
                     <input class="modal__color" type="radio" name="chooseColor" id="turcoise">
                     <input class="modal__color" type="radio" name="chooseColor" id="purple">
                 </div>

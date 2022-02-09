@@ -3,6 +3,7 @@
 /* === General === */
 body {
    height: 100vh;
+   min-height: 694px;
 
    font-family: $Maven-Pro;
    font-size: 14px;
@@ -157,7 +158,7 @@ button {
 /* === Modal window === */
 .modal {
    width: 90%;
-   height: 45%;
+   height: 50%;
    max-width: 30em;
    max-height: 25em;
    min-width: 331.2px;
@@ -253,23 +254,28 @@ button {
       width: 2em; height: 2em;
       position: relative;
       appearance: none;
+      z-index: 10;
       
       &::before {
          @include before(100%, 100%);
          position: absolute;
          border-radius: 50%;
          top: 0; left: 0;
-         z-index: 100;
          cursor: pointer;
-      }
-      
-      &:checked &::before{
-         background-color: red;
       }
 
       &:first-child::before {background-color: $pink;}
       &:nth-child(2)::before {background-color: $turcoise;}
       &:last-child::before {background-color: $purple;}
+
+      &:checked::after{
+         @include before(50%, 50%);
+         background-color: $lightGray;
+         border-radius: 50%;
+         position: absolute;
+         top: 50%; left: 50%;
+         transform: translate(-50%, -50%);
+      }
    }
 
 
@@ -316,5 +322,9 @@ button {
       .active-mode:hover {
          background-color: $pink;
       }
+   }
+
+   .modal {
+      height: 45%;
    }
 }
