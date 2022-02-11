@@ -18,6 +18,8 @@ button {
    -webkit-tap-highlight-color: transparent;
 }
 
+audio {visibility: none;}
+
 /* === == === */
 
 /* === App === */
@@ -119,6 +121,8 @@ button {
    &__status {
       position: absolute;
       bottom: 15%;
+      @include flex(space-between, center);
+      gap: 1.5em;
       
       &-button {
          background-color: transparent;
@@ -130,6 +134,9 @@ button {
          }
          
          & i {font-size: 2em;}
+      }
+      & #reloadPomodoro {
+         display: none;
       }
    }
    &:active {

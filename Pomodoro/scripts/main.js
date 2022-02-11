@@ -12,15 +12,16 @@ const verifyFormFields = (pomo_value, short_value, long_value) => {
          reject(alert('Empty values are not allowed!!'));
       }
       else {
-         resolve('applyChangesInterface is executed succesful');
+         resolve('Verification complete');
       }
    });
 }
 
 
-const playSound = () => {
-   // Play a sound when starts the pomodoro
-   document.getElementById('bellSong').play();
+const playSound =  {
+   // Play a sound when starts and ends the pomodoro
+   switch: () => document.getElementById('switchSound').play(),
+   bell: () => document.getElementById('bellSound').play()
 }
 
 const verifyChangeOfMode = (valueToStoreinMinutes) => {
@@ -51,6 +52,7 @@ const countdown = () => {
          // Verfiy if the interval has not finished
          if(currentPomo == -1) {
             stopInterval();
+            playSound.bell();
          } else {
             let minutes = Math.floor(currentPomo / 60);
             let seconds = currentPomo % 60;
@@ -69,12 +71,12 @@ const runTimer = () => {
       statusEl.classList.replace('fi-br-play', 'fi-br-pause');
       
       countdown();
-      playSound();
+      playSound.switch();
    } else {
       statusEl.classList.replace( 'fi-br-pause', 'fi-br-play');
 
       stopInterval();
-      playSound();
+      playSound.switch();
    }
 }
 
@@ -82,17 +84,6 @@ const runTimer = () => {
 const showSettings = () => document.querySelector('.modal').classList.toggle('show-modal');
 
 const applyChangesInInterface = () => {
-   // We need to verify in which mode we are and insert that values in the interface
-   let modesCollection = []
-   
-   // With this loop we add the btn element to the modesCollection array
-   for (const elem of modesBar.children) {modesCollection.push(elem.children[0])} 
-   
-   // Now, we filter the modesCollection array to get that has the class *active-mode*
-   let activeMode = modesCollection.filter(i => {
-      if(i.classList.contains('active-mode')) {return i};
-   });
-   
    // Here we access to the active element and depending on the id of the element we made the insertion of the minutes that we set in the
    const modalSetPomodoro = document.getElementById('modal--setPomodoro').value;
    const modalSetShortbreak = document.getElementById('modal--setShort-break').value;
@@ -100,6 +91,17 @@ const applyChangesInInterface = () => {
    
    verifyFormFields(modalSetPomodoro, modalSetShortbreak, modalSetLongBreak)
    .then(fullfiled => {
+      // We need to verify in which mode we are and insert that values in the interface
+      let modesCollection = []
+   
+      // With this loop we add the btn element to the modesCollection array
+      for (const elem of modesBar.children) {modesCollection.push(elem.children[0])} 
+   
+      // Now, we filter the modesCollection array to get that has the class *active-mode*
+      let activeMode = modesCollection.filter(i => {
+         if(i.classList.contains('active-mode')) {return i};
+      });
+   
       console.log(fullfiled);
       switch (activeMode[0].id) {
          case 'mode-pomodoro':
