@@ -9,6 +9,7 @@ body {
    font-size: 14px;
    font-weight: bold;
    background-color: $darkBlue;
+   overflow: hidden;
 }
 
 ul {list-style: none;}
@@ -60,6 +61,7 @@ audio {visibility: none;}
       background-color: transparent;
       color: $blueGray;
       font-weight: bold;
+      @include transition(color);
 
       &:active {
          color: $lightGray;
@@ -69,6 +71,8 @@ audio {visibility: none;}
    .active-mode {
       background-color: $pink;
       color: $darkBlue;
+      @include transition(background-color);
+      @include transition(color);
    }
    
    @media (max-width: 413px) {
@@ -135,9 +139,6 @@ audio {visibility: none;}
          
          & i {font-size: 2em;}
       }
-      & #reloadPomodoro {
-         display: none;
-      }
    }
    &:active {
       transform: scale(.99);
@@ -186,8 +187,7 @@ audio {visibility: none;}
    visibility: hidden;
    transform: scale(0.95);
    transition: visibility 0s linear 0.3s, opacity 0.3s 0s, transform 0.3s;
-
-   
+      
    &__header, &__settings, &__color {width: 100%}
    
    &__header {
@@ -296,7 +296,6 @@ audio {visibility: none;}
       position: absolute;
       bottom: -1em; left: 37%;
    }
-
 }
 
 .show-modal {

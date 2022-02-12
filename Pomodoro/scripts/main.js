@@ -11,12 +11,14 @@ const verifyFormFields = (pomo_value, short_value, long_value) => {
       else if(pomo_value.length == 0 || short_value.length == 0 || long_value.length == 0) {
          reject(alert('Empty values are not allowed!!'));
       }
+      else if(pomo_value.length > 3 || short_value.length > 3 || long_value.length > 3) {
+         reject(alert('The number is too big!!'));
+      }
       else {
          resolve('Verification complete');
       }
    });
 }
-
 
 const playSound =  {
    // Play a sound when starts and ends the pomodoro
@@ -36,6 +38,12 @@ const stopInterval = () => {
    interval = null;
 }
 
+const reloadTimer = (reload_btn) => {
+   if(reload_btn.classList.contains('fi-br-rotate-right')) {
+      
+   } else console.error('This is not the reload button');
+}
+
 const updateInterfaceTimer = (min, sec) => {
    // Function that update the interface timer
    minutesEl = document.querySelector('.pomo__minutes');
@@ -53,6 +61,8 @@ const countdown = () => {
          if(currentPomo == -1) {
             stopInterval();
             playSound.bell();
+            // change the status icon
+            statusEl.classList.replace( 'fi-br-pause', 'fi-br-rotate-right');
          } else {
             let minutes = Math.floor(currentPomo / 60);
             let seconds = currentPomo % 60;
@@ -66,7 +76,6 @@ const countdown = () => {
 }
 
 const runTimer = () => {
-   let statusEl = document.getElementById('status');
    if(statusEl.classList.contains('fi-br-play')){
       statusEl.classList.replace('fi-br-play', 'fi-br-pause');
       
@@ -142,6 +151,8 @@ const modesBar = document.querySelector('.modes__ul');
 
 let settingsBtn = document.querySelector('.settings__btn');
 let closeModalBtn = document.querySelector('.modal__close');
+
+let statusEl = document.getElementById('status');
 
 /* === === === */
 
