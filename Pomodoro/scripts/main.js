@@ -1,7 +1,5 @@
 'use-strict';
 
-/* === Functions === */
-
 const verifyFormFields = (pomo_value, short_value, long_value) => {
    // This promise is for verify if the user not set invalid numbers in the settings
    return new Promise((resolve, reject) => {
@@ -12,12 +10,84 @@ const verifyFormFields = (pomo_value, short_value, long_value) => {
          reject(alert('Empty values are not allowed!!'));
       }
       else if(pomo_value.length > 3 || short_value.length > 3 || long_value.length > 3) {
-         reject(alert('The number is too big!!'));
+         reject(alert('The number is too long!!'));
       }
       else {
          resolve('Verification complete');
       }
    });
+}
+
+const whatchCurrentMode = () => {
+   //This function returns the current mode (pomo, short or long break)
+   let modesCollection = []
+   
+   // With this loop we each btn element to the modesCollection array
+   for (const elem of modesBar.children) {
+      modesCollection.push(elem.children[0])
+   } 
+   // Now, we filter the modesCollection array to get that has the class *active-mode*
+   let activeMode = modesCollection.filter(mode => {
+      if(mode.classList.contains('active-mode')) {return mode};
+   });
+
+   return activeMode;
+}
+
+const insertDependingCurrentMode  = () => {
+   // This function is a switch case, that gets the id, and inserts that in the DOM
+   switch (whatchCurrentMode()[0].id) {
+      case 'mode-pomodoro':
+         minutesEl.textContent = modalSetPomodoro.toString().padStart(2, "0");
+         secondsEl.textContent = '00';
+         setTimer(); 
+      break;
+         
+      case 'mode-shortBreak':
+         minutesEl.textContent = modalSetShortbreak.toString().padStart(2, "0");
+         secondsEl.textContent = '00';
+         setTimer(); 
+      break;
+         
+      case 'mode-longBreak':
+         minutesEl.textContent = modalSetLongBreak.toString().padStart(2, "0");
+         secondsEl.textContent = '00';
+         setTimer(); 
+      break;
+   }
+   ////... I set the timer for get the values inserted in the DOM
+}
+
+const insertInputValuesInTheInterface = () => {
+   modalSetPomodoro = document.getElementById('modal--setPomodoro').value;
+   modalSetShortbreak = document.getElementById('modal--setShort-break').value;
+   modalSetLongBreak = document.getElementById('modal--setLong-break').value;
+
+   verifyFormFields(modalSetPomodoro, modalSetLongBreak, modalSetLongBreak)
+   .then(() => {
+      // Now, i insert the corresponding value depending in the mode
+      insertDependingCurrentMode();
+   })
+   .catch(err => console.error(err));
+}
+
+const toggleModalSettings = () => {
+   // Toggle the visivility of the modal settings
+   settingsModalW.classList.toggle('show-modal');
+}
+
+const changeMode = (e) => {
+   if(e.target && e.target.tagName == 'BUTTON') {
+      // First I remove the active state of the element that has it
+      for (const child of modesBar.children) {
+         child.children[0].classList.remove('active-mode');
+      }
+      // After I adds the active state of the clicked element
+      e.target.classList.add('active-mode');
+
+      // To the end, i inserts the the value provided by the mode
+      insertInputValuesInTheInterface();
+   }
 }
 
 const playSound =  {
@@ -26,29 +96,19 @@ const playSound =  {
    bell: () => document.getElementById('bellSound').play()
 }
 
-const verifyChangeOfMode = (valueToStoreinMinutes) => {
-   stopInterval();
-   minutesEl.textContent = valueToStoreinMinutes;
-   currentPomo = valueToStoreinMinutes * 60;
-}
-
-const stopInterval = () => {
-   // Function used to stop the interval
-   clearInterval(interval);
-   interval = null;
-}
-
-const reloadTimer = (reload_btn) => {
-   if(reload_btn.classList.contains('fi-br-rotate-right')) {
-      
-   } else console.error('This is not the reload button');
+const togglePlayPauseIcon = () => {
+   // Change the icon when starts or stops the timer
+   if(statusEl.classList.contains('fi-br-play')){
+      statusEl.classList.replace('fi-br-play', 'fi-br-pause');
+      playSound.switch();
+   } else {
+      statusEl.classList.replace( 'fi-br-pause', 'fi-br-play');
+      playSound.switch();
+   }
 }
 
 const updateInterfaceTimer = (min, sec) => {
    // Function that update the interface timer
-   minutesEl = document.querySelector('.pomo__minutes');
-   secondsEl = document.querySelector('.pomo__seconds');
-   
    minutesEl.textContent = min.toString().padStart(2, "0");
    secondsEl.textContent = sec.toString().padStart(2, "0");
 }
@@ -58,16 +118,16 @@ const countdown = () => {
    if(!interval) {
       interval = setInterval(() => {
          // Verfiy if the interval has not finished
-         if(currentPomo == -1) {
+         if(currentTimer == -1) {
             stopInterval();
             playSound.bell();
             // change the status icon
             statusEl.classList.replace( 'fi-br-pause', 'fi-br-rotate-right');
          } else {
-            let minutes = Math.floor(currentPomo / 60);
-            let seconds = currentPomo % 60;
+            let minutes = Math.floor(currentTimer / 60);
+            let seconds = currentTimer % 60;
          
-            currentPomo = currentPomo - 1;
+            currentTimer = currentTimer - 1;
          
             updateInterfaceTimer(minutes, seconds);
          }
@@ -75,119 +135,74 @@ const countdown = () => {
    }
 }
 
-const runTimer = () => {
-   if(statusEl.classList.contains('fi-br-play')){
-      statusEl.classList.replace('fi-br-play', 'fi-br-pause');
-      
+const setTimer = () => {
+   let timeInSeconds = minutesEl.textContent * 60; // pass to seconds the current timer
+   currentTimer = timeInSeconds;
+}
+
+const stopInterval = () => {
+   // Function used to stop the interval
+   clearInterval(interval);
+   interval = null;
+}
+
+const reloadTimer = () => {
+   statusEl.classList.replace('fi-br-rotate-right','fi-br-pause');
+   // stopInterval();
+   insertInputValuesInTheInterface();
+}
+
+const startTimer = () => {
+   // If we have the 'play' status, it's to say that the timer is stop, and we play it, and change the status of the icon
+   // but if we have the 'pause' status, the timer is runing and we stops it
+   if(statusEl.classList.contains('fi-br-play')) {
       countdown();
-      playSound.switch();
-   } else {
-      statusEl.classList.replace( 'fi-br-pause', 'fi-br-play');
-
+   } else if(statusEl.classList.contains('fi-br-pause')){
       stopInterval();
-      playSound.switch();
+   } else {
+      reloadTimer();
    }
+
+   togglePlayPauseIcon();
 }
 
-// ---- Handdle the settings (modal window) ----
-const showSettings = () => document.querySelector('.modal').classList.toggle('show-modal');
-
-const applyChangesInInterface = () => {
-   // Here we access to the active element and depending on the id of the element we made the insertion of the minutes that we set in the
-   const modalSetPomodoro = document.getElementById('modal--setPomodoro').value;
-   const modalSetShortbreak = document.getElementById('modal--setShort-break').value;
-   const modalSetLongBreak = document.getElementById('modal--setLong-break').value;
-   
-   verifyFormFields(modalSetPomodoro, modalSetShortbreak, modalSetLongBreak)
-   .then(fullfiled => {
-      // We need to verify in which mode we are and insert that values in the interface
-      let modesCollection = []
-   
-      // With this loop we add the btn element to the modesCollection array
-      for (const elem of modesBar.children) {modesCollection.push(elem.children[0])} 
-   
-      // Now, we filter the modesCollection array to get that has the class *active-mode*
-      let activeMode = modesCollection.filter(i => {
-         if(i.classList.contains('active-mode')) {return i};
-      });
-   
-      console.log(fullfiled);
-      switch (activeMode[0].id) {
-         case 'mode-pomodoro':
-            verifyChangeOfMode(modalSetPomodoro);
-         break;
-   
-         case 'mode-shortBreak':
-            verifyChangeOfMode(modalSetShortbreak);
-         break;
-         
-         case 'mode-longBreak':
-            verifyChangeOfMode(modalSetLongBreak)
-         break;
-      }
-   })
-   .catch(err => err);
-}
-
-/* === === === */
-
-/* === Variables declarations === */
-let currentPomo;  
-let currentShortBreak;
-let currentLongBreak;
-
-let isRunning = false;
+/* === Variables === */
 let interval;
+let currentTimer;
 
-const formEl = document.querySelector('.modal__settings');
+let modalSetPomodoro, modalSetShortbreak ,modalSetLongBreak;
 
-let pomodoroEl = document.querySelector('.pomo');
-let applySettingsBtn = document.getElementById('applyChanges');
 
-let minutesEl = document.querySelector('.pomo__minutes');
-let secondsEl = document.querySelector('.pomo__seconds');
-
+/* === Constants === */
 const modesBar = document.querySelector('.modes__ul');
+const minutesEl = document.querySelector('.pomo__minutes');
+const secondsEl = document.querySelector('.pomo__seconds');
 
-let settingsBtn = document.querySelector('.settings__btn');
-let closeModalBtn = document.querySelector('.modal__close');
+const settingsBtn = document.querySelector('.settings__btn');
+const closeModalBtn = document.querySelector('.modal__close');
+const settingsModalW = document.querySelector('.modal');
+const applySettingsBtn = document.getElementById('applyChanges');
 
-let statusEl = document.getElementById('status');
+const pomodoroElement = document.querySelector('.pomo');
 
-/* === === === */
-
+const statusEl = document.getElementById('status');
 
 /* === Code execution === */
 
-// ---- show and hide the modal ----
-settingsBtn.addEventListener('click', showSettings);
-closeModalBtn.addEventListener('click', showSettings);
+setTimer(); // Set the curent timer instead the page loads
 
-// Reset the form
-formEl.addEventListener('submit', e => e.preventDefault()); 
-applySettingsBtn.addEventListener('click', applyChangesInInterface);
-applySettingsBtn.addEventListener('click', showSettings);
+settingsBtn.addEventListener('click', toggleModalSettings);
 
-// I load this funcito instead the page loads for stores the values
-applyChangesInInterface();
+applySettingsBtn.addEventListener('click', e => {
+   e.preventDefault();
+   toggleModalSettings();
+});
+applySettingsBtn.addEventListener('click', insertInputValuesInTheInterface);
 
-// ---- When starts the pomodoro ----
-pomodoroEl.addEventListener('click', runTimer);
+closeModalBtn.addEventListener('click', toggleModalSettings);
 
-// ---- changing between modes (pomo and breaks) ----
-modesBar.addEventListener('click', e => {
-   if(e.target && e.target.tagName == 'BUTTON') {
-      // First I remove the active state of the element that has it
-      for (const child of modesBar.children) {
-         child.children[0].classList.remove('active-mode');
-      }
-      // After I adds the active state of the clicked element
-      e.target.classList.add('active-mode');
-      
-      // Update the values in interface
-      applyChangesInInterface()
-   }
-})
+modesBar.addEventListener('click', e => changeMode(e)); // Changing between modes (pomo and breaks)
 
-/* === === === */
+// statusEl.addEventListener('click', reloadTimer);
 
+pomodoroElement.addEventListener('click', startTimer);
