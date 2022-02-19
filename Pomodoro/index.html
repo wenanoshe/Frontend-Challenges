@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles/css/normalize.css">
     <link rel="stylesheet" href="styles/css/main.min.css">
 
-
     <!-- scripts -->
     <script defer src="scripts/main.js" type="module"></script>
     <script defer src="scripts/changeTheme.js"></script>
@@ -90,13 +89,13 @@
             <div class="modal__choose-main-color">
                 <h3 class="modal__subtitle">Color</h3>
                 <div class="modal__palette">
-                    <input class="modal__color" type="radio" name="chooseColor" id="pink" checked="true">
-                    <input class="modal__color" type="radio" name="chooseColor" id="turcoise">
-                    <input class="modal__color" type="radio" name="chooseColor" id="purple">
+                    <input class="modal__color" type="radio" name="chooseColor" data-value="pink" id="pink" checked="true">
+                    <input class="modal__color" type="radio" name="chooseColor" data-value="turcoise" id="turcoise">
+                    <input class="modal__color" type="radio" name="chooseColor" data-value="purple" id="purple">
                 </div>
             </div>
 
-            <button class="modal__btn" id="applyChanges">Apply</button>
+            <button class="modal__btn pink" id="applyChanges">Apply</button>
         </form>
     </div>
        

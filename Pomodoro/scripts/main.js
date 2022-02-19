@@ -28,7 +28,9 @@ const whatchCurrentMode = () => {
    } 
    // Now, we filter the modesCollection array to get that has the class *active-mode*
    let activeMode = modesCollection.filter(mode => {
-      if(mode.classList.contains('active-mode')) {return mode};
+      if(mode.classList.contains('active-mode')) {
+         return mode;
+      }
    });
 
    return activeMode;
@@ -67,6 +69,7 @@ const insertInputValuesInTheInterface = () => {
    .then(() => {
       // Now, i insert the corresponding value depending in the mode
       insertDependingCurrentMode();
+      getSelectedTheme();
    })
    .catch(err => console.error(err));
 }
@@ -80,7 +83,7 @@ const changeMode = (e) => {
    if(e.target && e.target.tagName == 'BUTTON') {
       // First I remove the active state of the element that has it
       for (const child of modesBar.children) {
-         child.children[0].classList.remove('active-mode');
+         child.children[0].classList.remove('active-mode', 'pink', 'turcoise', 'purple');
       }
       // After I adds the active state of the clicked element
       e.target.classList.add('active-mode');
@@ -166,13 +169,47 @@ const startTimer = () => {
    togglePlayPauseIcon();
 }
 
+const getSelectedTheme = () => {
+   // Filters the input checkbox that is checked
+   colorPallete.filter(_selectedTheme => {
+      if(_selectedTheme.checked) {
+         console.log(_selectedTheme.dataset.value);
+         changeTheme(_selectedTheme.dataset.value);
+      }
+   });
+}
+
+const changeTheme = (_currentColor) => {
+   const elemActiveMode = document.querySelector('.active-mode');
+
+   switch (_currentColor) {
+      case 'pink': 
+         elemActiveMode.classList.add('pink');
+         applySettingsBtn.classList.add('pink');
+         // elemActiveMode.style.background = 'hsl(358, 79%, 70%)';
+         // applySettingsBtn.style.background = 'hsl(358, 79%, 70%)';
+      break;
+      case 'turcoise': 
+         elemActiveMode.classList.add('turcoise');
+         applySettingsBtn.classList.add('turcoise');
+         // elemActiveMode.style.background = 'hsl(173, 57%, 45%)';
+         // applySettingsBtn.style.background = 'hsl(173, 57%, 45%)';
+      break;
+      case 'purple': 
+         elemActiveMode.classList.add('purple');
+         applySettingsBtn.classList.add('purple');
+         // elemActiveMode.style.background = 'hsl(303, 49%, 43%)';
+         // applySettingsBtn.style.background = 'hsl(303, 49%, 43%)';
+      break;
+   }
+} 
+
 /* === Variables === */
-let interval;
-let currentTimer;
+let interval, currentTimer;
 
-let modalSetPomodoro, modalSetShortbreak ,modalSetLongBreak;
+let modalSetPomodoro, modalSetShortbreak, modalSetLongBreak;
 
-
+let currentThemeColorEl;
 /* === Constants === */
 const modesBar = document.querySelector('.modes__ul');
 const minutesEl = document.querySelector('.pomo__minutes');
@@ -182,10 +219,13 @@ const settingsBtn = document.querySelector('.settings__btn');
 const closeModalBtn = document.querySelector('.modal__close');
 const settingsModalW = document.querySelector('.modal');
 const applySettingsBtn = document.getElementById('applyChanges');
+const colorPallete = [...document.querySelectorAll('.modal__color')];
+
 
 const pomodoroElement = document.querySelector('.pomo');
 
 const statusEl = document.getElementById('status');
+
 
 /* === Code execution === */
 
@@ -201,8 +241,14 @@ applySettingsBtn.addEventListener('click', insertInputValuesInTheInterface);
 
 closeModalBtn.addEventListener('click', toggleModalSettings);
 
-modesBar.addEventListener('click', e => changeMode(e)); // Changing between modes (pomo and breaks)
+modesBar.addEventListener('click', changeMode); // Changing between modes (pomo and breaks)
 
 // statusEl.addEventListener('click', reloadTimer);
 
 pomodoroElement.addEventListener('click', startTimer);
+
+// changin the color theme
+getSelectedTheme()
+colorPallete.forEach(color => {
+   color.addEventListener('click', getSelectedTheme);
+})

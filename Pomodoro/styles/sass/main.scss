@@ -69,7 +69,6 @@ audio {visibility: none;}
    }
 
    .active-mode {
-      background-color: $pink;
       color: $darkBlue;
       @include transition(background-color);
       @include transition(color);
@@ -290,7 +289,6 @@ audio {visibility: none;}
       padding: .7em 2em;  
       border-radius: 5em;
       border: none;
-      background-color: $pink;
       color: $white;
       font-weight: bold;
       position: absolute;
@@ -319,18 +317,32 @@ audio {visibility: none;}
       max-width: 28em;
       &__btn {
          font-size: 1em;
+         @include transition(color);
 
          &:hover {
-            background-color: $darkBlue;
+            color: $gray;
          }
-
       }
-      .active-mode:hover {
-         background-color: $pink;
-      }
+      
    }
 
+   .active-mode:hover {color: $blueGray}
+   
    .modal {
       height: 45%;
    }
+}
+
+/* == Utility clases == */
+
+.pink {
+   background-color: $pink;
+}
+
+.turcoise {
+   background-color: $turcoise
+}
+
+.purple {
+   background-color: $purple;
 }

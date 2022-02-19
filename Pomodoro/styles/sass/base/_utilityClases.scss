@@ -1,0 +1,13 @@
+@use './mixin&vars' as *;
+
+.pink {
+   background-color: $pink;
+}
+
+.turcoise {
+   background-color: $turcoise
+}
+
+.purple {
+   background-color: $purple;
+}
