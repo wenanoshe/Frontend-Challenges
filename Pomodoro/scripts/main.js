@@ -172,10 +172,7 @@ const startTimer = () => {
 const getSelectedTheme = () => {
    // Filters the input checkbox that is checked
    colorPallete.filter(_selectedTheme => {
-      if(_selectedTheme.checked) {
-         console.log(_selectedTheme.dataset.value);
-         changeTheme(_selectedTheme.dataset.value);
-      }
+      if(_selectedTheme.checked) changeTheme(_selectedTheme.dataset.value);
    });
 }
 

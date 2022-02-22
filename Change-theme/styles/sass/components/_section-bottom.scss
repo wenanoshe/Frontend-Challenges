@@ -73,30 +73,21 @@
 
 }
 
-
 /* MEDIA FOR MORE SMALL SCREENS AND TABLETS*/
 
 @media screen and (max-width: 1220px){
-
-.overview {
-    &__cardBox {
-        height: 70vh;
-        margin-bottom: 3em;
-        
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        gap: 8% 5%;
-
-        // background-color: rebeccapurple;
-        // padding:  0 0 4em;
+    .overview {
+        &__cardBox {
+            height: 70vh;
+            margin-bottom: 3em;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 8% 5%;
+        }
     }
-}
-
 }
 
 
 @media screen and (max-width: 840px) {
-.overview {
-    margin-top: 5em;
-}
+    .overview {margin-top: 5em;}
 }

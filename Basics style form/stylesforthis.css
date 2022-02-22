@@ -9,19 +9,19 @@
     --gray: hsl(0, 0%, 59%);
     --darkBlue: hsl(209, 33%, 12%);
 
-    --trans: all 300ms;
+    --trans: 300ms;
 }
 
 body {
-    /* /* width: 100vw; */
-    height: 100vh; 
+    min-height: 100vh; 
     font-size: 20px;
     font-family: 'Libre Franklin', sans-serif;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 0;
+    padding: 2.5em 0;
 }
 
 /* the logo */
@@ -39,7 +39,7 @@ body {
 .head h1 {
     font-weight: 300;
     color: var(--gray);
-    margin: 0px 0 15px 0;
+    margin: 0px 0 0.75em 0;
 }
 
 .head b {
@@ -48,21 +48,21 @@ body {
 }
 
 .head p {
-    font-size: 16px;
+    font-size: 0.8em;
     color: #4b4b4b;
 }
 
 /* the form */
 
 .form__input {
-    width: 350px;
-    height: 45px;
-    border-radius: 50px;
+    width: 17.5em;
+    height: 2.25em;
+    border-radius: 2.5em;
     border: 1px solid var(--gray);
-    padding: 0 30px;
-    font-size: 18px;
+    padding: 0 1.5em;
+    font-size: 0.9em;
     color: var(--darkBlue);
-    transition: var(--trans);
+    transition: background-color var(--trans);
 }
 
 .form__input:focus {
@@ -75,20 +75,20 @@ body {
 }
 
 .form__button {
-    width: 150px;
-    height: 45px;
-    border-radius: 50px;
+    width: 7.5em;
+    height: 2.25em;
+    border-radius: 2.5em;
     border: none;
-    font-size: 16px;
+    font-size: 0.8em;
     background-color: rgb(44, 209, 93);
     font-weight: 600;
     color: #eee;
-    box-shadow: 0 7px 10px #b2ecba;
-    transition: var(--trans);
+    box-shadow: 0 0.35em .5em #b2ecba;
+    transition: box-shadow var(--trans), transform var(--trans);
 }
 
 .form__button:hover {
-    box-shadow: 0 7px 10px #99daa2;
+    box-shadow: 0 0.35em .5em #99daa2;
 }   
 
 .form__button:active {
@@ -102,7 +102,7 @@ body {
 
 /* main ilustration */
 .imgCon__img {
-    transition: var(--trans);
+    transition: box-shadow var(--trans);
 }
 
 .imgCon__img:hover {
@@ -110,21 +110,44 @@ body {
 }
 
 .imgCon__img {
-    width: 450px;
+    width: 22.5em;
 }
 
 
 /* Social media icons */
 .socialMd {
-    padding: 0 10px;
+    padding: 0 .5em;
     display: flex;
     justify-content: space-evenly;
 }
 
 .img-social {
-    width: 20px;
+    width: 1em;
 }
 
 .caption {
-    font-size: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* media query */
+
+@media screen and (max-width: 727px) {
+    body {
+        padding: 0;
+        font-size: 16px;
+        width: ;
+        min-height: 100vh;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .form {
+        height: 5em;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
