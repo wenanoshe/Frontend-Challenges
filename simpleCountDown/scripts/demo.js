@@ -6,7 +6,7 @@ const reload = document.getElementById('reload');
 
 const timeTarget = document.getElementById('time');
 
-new Countdown(timeTarget, 5000, true);
+let demo = new Countdown(timeTarget, 5000, true);
 
 pause.addEventListener('click', demo.stop);
 play.addEventListener('click', demo.play);
