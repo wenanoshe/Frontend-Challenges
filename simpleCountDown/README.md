@@ -1,4 +1,4 @@
-# Simple CountDown
+# Simple Simple CountDown
 Simple CountDown is  an library that lets include in your projects a simple countdown, for example in a task, an exam with time, and in anything that you can think.
 Look a demo in 
 ## First version
