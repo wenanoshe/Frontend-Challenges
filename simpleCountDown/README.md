@@ -12,4 +12,7 @@ For create a new countdown, you import the class into your project, and then, cr
 - **target** : is the element in which will be printed the countdown.
 - **startTime** : (number) recives the initial value in minutes.
 - **useMiliseconds** : (boolean) [default = false] if we set true, you will use the format in miliseconds if is not defined use the minutes format.
-- 
+### Methods
+- **`play()`** : starts the countdown
+- **`stop()`** : stop or pause the countdown
+- **`reload()`** : reload the countdown
