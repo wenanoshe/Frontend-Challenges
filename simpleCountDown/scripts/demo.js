@@ -21,7 +21,6 @@ initValue.addEventListener('keyup', () => {
    console.log(initValue.value);
 });
 
-
 pause.addEventListener('click', demo.stop);
 play.addEventListener('click', demo.play);
 reload.addEventListener('click', demo.reload);
