@@ -1,6 +1,6 @@
 'use-strict';
 
-import { Countdown } from "./sscountdown/countdown.js";
+import { Countdown } from "./simpleCountdown/countdown.js";
 
 /* === Funcitions === */
 const countClicks = () => {
