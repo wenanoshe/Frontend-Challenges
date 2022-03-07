@@ -55,10 +55,10 @@ export class Countdown {
             self.count = setInterval(() => {
                if(self.currentTime <= 0) self.stop();
                else {
-                  self.currentTime -= 10;
+                  self.currentTime -= 1;
                   self.updateInterface();
                }
-            }, 10);
+            }, 1000);
          } else console.log('The timer is currently runing!!!');
       }
    }
@@ -69,7 +69,7 @@ export class Countdown {
    }
 
    reload() {
-      // self.stop();
+      self.stop();
       self.executed = false; // set to false again for make the multiplication if use minutes format
       self.currentTime = self.startTime; // reset to the initial value
       self.useMiliseconds ? self.updateInterface__seconds() : self.updateInterface(); // and print
