@@ -1,0 +1,88 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.footer {
+   background-color: $darkBlue3;
+   min-height: 80vh;
+   padding: 15em 0 2em;
+   text-align: left;
+   @include flex(column, space-between);
+
+   &__section-logo {
+      margin-bottom: 1em;
+   }
+   
+   &__section-info {
+      flex-grow: 3;
+      height: 100%;
+      @include flex(column, space-between);
+   }
+   
+   &__social {
+      @include flex(row, stretch, stretch, 1em);
+      margin-bottom: 2em;
+   }
+   
+   &__icon {height: 1.5em;}
+
+   &__about, &__contact {
+      margin-bottom: 2em;
+      @include flex (column, center, stretch, 1.4em);
+      & a:active {
+         text-decoration: underline;
+      }
+   }
+
+   &__sm {
+      margin-top: 2em;
+      @include flex(row, center, center, 10%);
+      
+      & i {
+         font-size: 1.3em;
+         text-align: center;
+      }
+   }
+}
+
+/* 
+   ====   ----------  ====  ----------  ====
+   ---------------MEDIAQUERYS---------------
+   ====   ----------  ====  ----------  ====
+*/
+
+@media screen and (min-width: 1080px) {
+   .footer {
+      &__section-info {
+         flex-direction: row;
+      }
+      &__info {
+         max-width: 30%;
+      }
+      &__sm {
+         min-width: 20%;
+         justify-content: space-evenly;
+
+         & a {
+            width: 1.3em; height: 1.3em;
+            text-align: center;
+            position: relative;
+            
+            &:hover {text-decoration: underline;}
+            
+            &::before {
+               @include before(300%, 300%);
+               background-color: hsla(0, 0, 0, 0.3);
+               border-radius: 50%;
+               top: -100%; left: -100%;
+               
+               transition: transform .3s;
+               transform: scale(0);
+            }
+         }
+         
+         & a:hover::before {
+            transform: scale(1);
+         }
+      }
+   }
+}
