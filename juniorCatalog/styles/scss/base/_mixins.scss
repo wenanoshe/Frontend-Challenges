@@ -1,0 +1,15 @@
+@mixin flex($fdirection: row, $jsc: stretch, $ai: stretch, $gap: 0) {
+   display: flex;
+   flex-direction: $fdirection;
+   justify-content: $jsc;
+   align-items: $ai;
+   gap: $gap;
+}
+
+@mixin before($width, $height, $position: absolute) {
+   content: '';
+   display: block;
+   width: $width; 
+   height: $height;
+   position: $position;
+}

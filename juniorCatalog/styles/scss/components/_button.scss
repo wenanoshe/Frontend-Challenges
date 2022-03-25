@@ -1,0 +1,26 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.btn {
+   height: 70%;
+   padding: .5em 1em;
+   cursor: pointer;
+
+   color: $darkLavander;
+   background-color: $desBlue;
+
+   border: none;
+   outline: none;
+   border-radius: 7px;
+
+   @include flex(row, space-between, center);
+
+   transition: box-shadow 200ms, transform 200ms;
+
+   &:hover {
+       box-shadow: -3px 3px 5px hsl(0, 0, 0, 0.3);
+       transform: translate(3px, -3px);
+   }
+
+   
+}
