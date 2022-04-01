@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="styles/css/normalize.css">
+  <link rel="stylesheet" href="styles/css/main.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap" rel="stylesheet">
+
+  <title>Fylo data storage component</title>
+</head>
+<body>
+<div class="container">
+
+    <!-- Part one -->
+    <div class="card">
+      <img class="card__logo" src="images/logo.svg" alt="logo">
+
+      <div class="card__items">
+        <div class="card__item">
+          <img class="card__item-icon" src="images/icon-document.svg" alt="icono documento">
+        </div>
+        <div class="card__item">
+          <img class="card__item-icon" src="images/icon-folder.svg" alt="folder icon">
+        </div>
+        <div class="card__item">
+          <img class="card__item-icon" src="images/icon-upload.svg" alt="icon upload">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Part two -->
+    <div class="info">
+      <p class="info__statement">You’ve used <b>815 GB</b> of your storage</p>
+      
+      <div class="info__barBox">
+        <input class="info__progressbar" id="progressbar" value="815" type="range" min="0" max="1000">
+
+        <div class="info__rangeNumbers">
+          <b>0Gb</b><b>1000GB</b>
+        </div>
+      </div>
+
+      <p class="info__left">
+        <b>185</b><span>GB left</span>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

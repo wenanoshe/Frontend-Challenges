@@ -1,0 +1,109 @@
+@use 'base/vars' as *;
+@use 'base/mixins' as *;
+
+body {
+   min-height: 100vh;
+   background: 
+      url(../../images/bg-mobile.png)
+      $darkBlue
+      no-repeat;
+   background-size: cover;
+   font-size: 14px;
+   color: $paleBlue;
+   @include flex(row, center, center);
+}
+
+.container {
+   width: 100%;
+   @include flex(column, center, center, 2em);
+}
+
+.card {
+   width: 80%;
+   min-width: 20.29em;
+   padding: 15% 35% 15% 15%;
+   background-color: $darkBlue;
+   border-radius: .8em 6em .8em .8em;
+
+   &__items {
+      margin-top: 1.4em;
+      @include flex (row, stretch, center, 10%);
+   }
+
+   &__item {
+      width:4em; height: 3em;
+      background-color: $veryDarkBlue;
+      border-radius: 7px;
+      @include flex(row, center, center);
+   }
+}
+
+.info {
+   width: 80%;
+   min-width: 20.29em;
+   padding: 2em 2em 3em;
+   border-radius: .8em;
+   position: relative;
+   background-color: $darkBlue;
+   
+   &__statement {
+      text-align: center;
+      margin-bottom: 1em;
+   }
+
+   &__progressbar {
+      width: 100%; 
+      height: 1.5em;
+
+      &::-moz-range-track {
+         // background-color: red;
+      }
+
+      &::-ms-track {
+         // background-color: red;
+      }
+
+      &::-ms-thumb {
+         // background-color: red;
+
+      }
+
+      &::-moz-range-thumb {
+         width: 1em; height: 1em;
+         border:none;
+         background-color: red;
+
+      }
+   }
+
+   &__rangeNumbers {
+      width: 100%;
+      @include flex(row, space-between);
+   }
+
+   &__left {
+      width: max-content;
+      padding: 1em;
+      background-color: $paleBlue;
+      color: $veryDarkBlue;
+      border-radius: 7px;
+      text-transform: uppercase;
+
+
+      position: absolute;
+      bottom: -25%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include flex(row, center, center, 1em);
+
+      & b {
+         font-size: 2em;
+      }
+      
+      & span {
+         color: $grayishBlue;
+      }
+   }
+   
+}

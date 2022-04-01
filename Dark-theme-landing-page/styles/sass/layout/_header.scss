@@ -1,0 +1,27 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+/* =====NAVIGATION BAR===== */
+.nav {
+   & .menu {
+       padding: 1em 2em;
+       background-color: $darkBlue1;
+
+       @include flex(row, space-between, center);
+
+       &__logo {
+           width: 6em;
+       }
+
+       &__links {
+           width: 60%;
+           
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+       }
+       
+       &__item {color: $white;}
+      //  &__item:hover {text-decoration:underline;}
+   }
+}

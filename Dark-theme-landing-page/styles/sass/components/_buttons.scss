@@ -1,0 +1,30 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.btn {
+   padding: 1em 3em;
+   border-radius: 50px;
+   border: none;
+   background-color: $cyan2;
+   color: $white;
+
+   font-size: 1rem;
+   font-family: $raleway;
+   font-weight: 700;
+   
+   cursor: pointer;
+
+   transition: 
+      background $t-duration, 
+      box-shadow $t-duration,
+      transform $t-duration;
+   
+   &:active {
+      transform: scale(.98);
+   }
+   
+   &:hover {
+      background-color: $blue;
+      box-shadow: 5px 5px 5px $darkBlue3;
+   }
+}
