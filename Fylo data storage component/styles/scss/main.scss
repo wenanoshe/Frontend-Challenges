@@ -4,9 +4,9 @@
 body {
    min-height: 100vh;
    background: 
-      url(../../images/bg-mobile.png)
-      $darkBlue
-      no-repeat;
+   url(../../images/bg-mobile.png)
+   $darkBlue
+   no-repeat;
    background-size: cover;
    font-size: 14px;
    color: $paleBlue;
@@ -14,32 +14,51 @@ body {
 }
 
 .container {
-   width: 100%;
-   @include flex(column, center, center, 2em);
+   width: 80%;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(20.29em, 1fr));
+   grid-template-rows: repeat(1fr);
+   justify-items: center;
+   align-items: center;
+   gap: 5%;
+   background-color: red;
 }
 
 .card {
-   width: 80%;
+   width: 100%;
    min-width: 20.29em;
-   padding: 15% 35% 15% 15%;
+   padding: 10% 35% 10% 10%;
    background-color: $darkBlue;
    border-radius: .8em 6em .8em .8em;
-
+   
    &__items {
+      width: 110%;
       margin-top: 1.4em;
-      @include flex (row, stretch, center, 10%);
+      cursor: pointer;
+      @include flex (row, space-between, center, 10%);
    }
-
+   
    &__item {
-      width:4em; height: 3em;
+      width:4em; height: 4em;
       background-color: $veryDarkBlue;
       border-radius: 7px;
       @include flex(row, center, center);
+
+      transition: transform .4s;
+
+      &-icon {
+         transition: transform .2s;
+      }
+
+      &:hover &-icon{
+         transform: scale(1.3) rotate(10deg);
+      }
    }
+
 }
 
 .info {
-   width: 80%;
+   width: 100%;
    min-width: 20.29em;
    padding: 2em 2em 3em;
    border-radius: .8em;
@@ -51,36 +70,42 @@ body {
       margin-bottom: 1em;
    }
 
-   &__progressbar {
-      width: 100%; 
-      height: 1.5em;
+   &__barBox {
+      position: relative;
+   }
+   
 
-      &::-moz-range-track {
-         // background-color: red;
-      }
-
-      &::-ms-track {
-         // background-color: red;
-      }
-
-      &::-ms-thumb {
-         // background-color: red;
-
-      }
-
-      &::-moz-range-thumb {
+   &__barBg {
+      height: 2.2em; min-width: 100%;
+      background-color: $darkBlue2;
+      border-radius: 2em;
+      padding: 0 .3em;
+      @include flex(row, stretch, center);
+   }
+   
+   &__progress {
+      height: 65%; width: 80%;
+      background-image: linear-gradient(90deg,#FBA49D ,#FF5196);
+      border-radius: 2em;
+      position: relative;
+      
+      &::before {
+         @include before(1em, 1em);
          width: 1em; height: 1em;
-         border:none;
-         background-color: red;
-
+         background-color: #fff;
+         border-radius: 50%;
+         position: absolute;
+         right: .3em;
+         bottom: 3px;
       }
    }
 
+   
    &__rangeNumbers {
       width: 100%;
       @include flex(row, space-between);
    }
-
+   
    &__left {
       width: max-content;
       padding: 1em;
@@ -88,15 +113,14 @@ body {
       color: $veryDarkBlue;
       border-radius: 7px;
       text-transform: uppercase;
-
-
+      
       position: absolute;
       bottom: -25%;
       left: 50%;
       transform: translateX(-50%);
-
+      
       @include flex(row, center, center, 1em);
-
+      
       & b {
          font-size: 2em;
       }
