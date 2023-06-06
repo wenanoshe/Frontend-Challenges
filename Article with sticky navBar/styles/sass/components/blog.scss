@@ -2,6 +2,7 @@
 @use '../base/mixin' as *;
 
 
+
 main {
     margin-top: 5em;
     margin-bottom: 5em;
@@ -11,6 +12,7 @@ main {
     padding: 0 3em;
 
     font-family: $monserrate;
+
 
 }
 
@@ -35,20 +37,22 @@ main {
     &__title {font-size: 1.4em; margin-bottom: 1em;}
 
     &__link {
+        display: block;
         color: $lightSeeGreen;
         transition: transform 300ms;
+        padding: 5px 0;
 
         &::before {
             content: '';
             display: inline-block;
             position: absolute;
-            right: 10%;
+            right: 10px;
             margin-left: 1em;
             transition: transform 300ms;
         }
 
         &:hover::before {
-            content: '##';
+            content: '#';
             transform: scale(1.2);
         }
         &:focus::before {
@@ -73,5 +77,16 @@ main {
         color: $darkGrayBlue;
         font-size: .9em;
         font-weight: 700;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    main {
+        grid-template-columns: 1fr;        
+        margin-top: 0;
+    }
+    
+    .aside {
+        position: relative;
     }
 }

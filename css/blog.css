@@ -12,8 +12,10 @@ main {
 }
 
 .aside {
+  min-width: -webkit-max-content;
   min-width: -moz-max-content;
   min-width: max-content;
+  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   padding: 1.5em;
@@ -22,6 +24,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: -webkit-sticky;
   position: sticky;
   top: 4em;
 }
@@ -34,21 +37,19 @@ main {
   margin-bottom: 1em;
 }
 .aside__link {
-  display: block;
   color: #20b2aa;
   transition: transform 300ms;
-  padding: 5px 0;
 }
 .aside__link::before {
   content: "";
   display: inline-block;
   position: absolute;
-  right: 10px;
+  right: 10%;
   margin-left: 1em;
   transition: transform 300ms;
 }
 .aside__link:hover::before {
-  content: "#";
+  content: "##";
   transform: scale(1.2);
 }
 .aside__link:focus::before {
@@ -67,13 +68,4 @@ main {
   font-size: 0.9em;
   font-weight: 700;
 }
-
-@media screen and (max-width: 810px) {
-  main {
-    grid-template-columns: 1fr;
-    margin-top: 0;
-  }
-  .aside {
-    position: relative;
-  }
-}
+/*# sourceMappingURL=blog.css.map */

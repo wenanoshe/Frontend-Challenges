@@ -1,103 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sticky practice</title>
 
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Noto+Sans+JP&display=swap" rel="stylesheet"> 
-    
-    <link rel="stylesheet" href="styles/css/normalize.css">
-    <link rel="stylesheet" href="styles/css/general.css">
-    <link rel="stylesheet" href="styles/css/header.css">
-    <link rel="stylesheet" href="styles/css/blog.css">
-    <link rel="stylesheet" href="styles/css/footer.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
 
-    <script src="https://kit.fontawesome.com/9b83600627.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/css/normalize.css" />
+    <link rel="stylesheet" href="styles/css/general.css" />
+    <link rel="stylesheet" href="styles/css/header.css" />
+    <link rel="stylesheet" href="styles/css/blog.css" />
 
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/9b83600627.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="BIGCONTAINER">
-        <header>
-            <nav class="nav"> <!-- navigation menu -->
-                <h1 class="nav__logo">ImproVing</h1>
-                <ul class="nav__container">
-                    <li><a class="nav__item" href="#">
-                        <i class="nav__icon fas fa-home"></i>
-                        <span class="nav__txt">Home</span>
-                    </a></li>
-                    <li><a class="nav__item" href="#">
-                        <i class="nav__icon fas fa-search-plus"></i>
-                        <span class="nav__txt">Services</span>
-                    </a></li>
-                    <li><a class="nav__item" href="#">
-                        <i class="nav__icon fas fa-tag"></i>
-                        <span class="nav__txt">Pricing</span>
-                    </a></li>
-                    <li><a class="nav__item" href="#">
-                        <i class="nav__icon fas fa-building"></i>
-                        <span class="nav__txt">Company</span>
-                    </a></li>
-                    <li><a class="nav__item" href="#">
-                        <i class="nav__icon fas fa-headset"></i>
-                        <span class="nav__txt">Support</span>
-                    </a></li>
-                </ul>
-            </nav>
+      <header>
+        <nav class="nav">
+          <!-- navigation menu -->
+          <h1 class="nav__logo">ImproVing</h1>
+          <button class="nav__openMenu">Menu</button>
+          <ul class="nav__container">
+            <li>
+              <a class="nav__item" href="#">
+                <i class="nav__icon fas fa-home"></i>
+                <span class="nav__txt">Home</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="#">
+                <i class="nav__icon fas fa-search-plus"></i>
+                <span class="nav__txt">Services</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="#">
+                <i class="nav__icon fas fa-tag"></i>
+                <span class="nav__txt">Pricing</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="#">
+                <i class="nav__icon fas fa-building"></i>
+                <span class="nav__txt">Company</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="#">
+                <i class="nav__icon fas fa-headset"></i>
+                <span class="nav__txt">Support</span>
+              </a>
+            </li>
+            <button class="nav__closeNav"><i class="fa-solid fa-xmark"></i></button>
+          </ul>
+        </nav>
 
-            <div class="nav__img-container"> <!-- the main image --></div>
-        </header>
+        <section class="nav__img-container">
+          <h1 class="nav__title">Your problems,<br> our solutions</h1>
+          <p class="nav__stm">We help you find the best solutions to your software petitions; faster, better, and amazing software that fits your needs</p>
+          <button class="nav__btn">Know us</button>
+        </section>
+      </header>
 
-        <main>
-            <aside class="aside">
-                <h3 class="aside__title">Temas</h3>
-				<nav class="aside__nav">
-                    <ul class="aside__ul">
-					    <li><a href="#sopa" class="aside__link">Sopa</a></li>
-					    <li><a href="#demacaco" class="aside__link">De Macaco</a></li>
-					    <li><a href="#sopasopa" class="aside__link">Sopa Sopa</a></li>
-					    <li><a href="#macacoskrull" class="aside__link">Macaco Skrull</a></li>
-                        </ul>
-				</nav>
-            </aside>
-            <div class="blog">
-                <article class="blog__article">
-                    <h1 id="sopa" class="blog__title">Sopa</h1>
-                    <p class="blog__date">Posted March 4, 2021</p>
-                    <p class="blog__stmnt">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod scelerisque erat tincidunt hendrerit. Cras lobortis id diam sit amet consectetur. Suspendisse non pulvinar justo, ac commodo velit. Quisque maximus dolor ac magna molestie, sit amet commodo velit congue. Maecenas non dolor ut elit malesuada congue. Phasellus euismod nisi pharetra ante rutrum dignissim. Ut eget tortor ut sapien egestas sollicitudin. Aenean pulvinar varius augue, ac euismod tortor faucibus at. In commodo sodales turpis nec vehicula. Mauris luctus, risus non iaculis porttitor, felis eros sagittis enim, sed ultricies lacus magna quis urna.
-                    </p>
-                </article>
-                <article class="blog__article">
-                    <h1 id="demacaco" class="blog__title">De macaco</h1>
-                    <p class="blog__date">Posted April 15, 2021</p>
-                    <p class="blog__stmnt">
-						Ut sit amet vehicula lectus, nec vestibulum purus. Nulla a nibh magna. Pellentesque commodo commodo sapien eu sagittis. Aenean luctus mauris sit amet quam ornare, eu ultricies nunc auctor. Nulla volutpat purus eu venenatis facilisis. Nulla risus nisl, rhoncus vitae pulvinar nec, viverra eu odio. Duis nisi quam, gravida sed imperdiet sed, viverra fermentum turpis. Cras non iaculis augue, nec scelerisque nibh. Sed auctor dolor mi, sit amet placerat tellus sagittis eu. Curabitur nec luctus dolor. Ut congue rutrum vehicula. Ut viverra tincidunt nunc, vitae cursus nulla scelerisque aliquam.
-                    </p>
-                </article>
-                <article class="blog__article">
-                    <h1 id="sopasopa" class="blog__title">Sopa Sopa</h1>
-                    <p class="blog__date">Posted June 9, 2021</p>
-                    <p class="blog__stmnt">
-						Aliquam congue nibh in urna porta blandit. Mauris nec mi elit. Duis ligula quam, suscipit nec hendrerit ac, efficitur pulvinar tortor. Quisque venenatis leo ac hendrerit molestie. Quisque malesuada, enim ut feugiat finibus, sem mi faucibus enim, vel rhoncus ante justo in nibh. Duis sit amet ipsum tempus, pellentesque ex sed, mollis erat. Sed metus nibh, tincidunt vel laoreet eget, bibendum at est.
-                    </p>
-                </article>
-                <article class="blog__article">
-                    <h1 id="macacoskrull" class="blog__title">De Macaco Skrull</h1>
-                    <p class="blog__date">Posted October 23, 2021</p>
-                    <p class="blog__stmnt">
-						Nullam ullamcorper tincidunt laoreet. Donec sapien sapien, egestas id justo et, tincidunt accumsan ipsum. Etiam molestie lectus a consectetur condimentum. Donec malesuada at sapien eu viverra. Integer rutrum libero vitae est semper malesuada. Quisque convallis enim et erat aliquam, a facilisis nunc posuere. Nulla ultrices, turpis in pulvinar feugiat, dolor enim interdum mauris, vitae egestas purus orci vel nibh. Aliquam eleifend est ac eleifend dictum. Nunc condimentum tincidunt placerat. Praesent varius ornare quam vitae placerat. Donec justo sapien, pretium vitae vestibulum at, molestie eu ipsum. Proin non turpis eget risus egestas ornare in nec tortor. Sed commodo lectus vitae tortor blandit, id auctor mauris tempus. Aliquam erat volutpat.
-                    </p>
-                </article>
-            </div>
-        </main>
+      <main>
+        <aside class="aside">
+          <h3 class="aside__title">Topics</h3>
+          <nav class="aside__nav">
+            <ul class="aside__ul">
+              <li><a href="#firstproblem" class="aside__link">The first problem</a></li>
+              <li><a href="#wyneed" class="aside__link">What you need</a></li>
+              <li><a href="#prosolv" class="aside__link">Probable solutions</a></li>
+              <li>
+                <a href="#journeyend" class="aside__link">End of your journey</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <div class="blog">
+          <article class="blog__article">
+            <h1 id="firstproblem" class="blog__title">The first problem</h1>
+            <p class="blog__date">Posted March 4, 2021</p>
+            <p class="blog__stmnt">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              euismod scelerisque erat tincidunt hendrerit. Cras lobortis id
+              diam sit amet consectetur. Suspendisse non pulvinar justo, ac
+              commodo velit. Quisque maximus dolor ac magna molestie, sit amet
+              commodo velit congue. Maecenas non dolor ut elit malesuada congue.
+              Phasellus euismod nisi pharetra ante rutrum dignissim. Ut eget
+              tortor ut sapien egestas sollicitudin. Aenean pulvinar varius
+              augue, ac euismod tortor faucibus at. In commodo sodales turpis
+              nec vehicula. Mauris luctus, risus non iaculis porttitor, felis
+              eros sagittis enim, sed ultricies lacus magna quis urna.
+            </p>
+          </article>
+          <article class="blog__article">
+            <h1 id="wyneed" class="blog__title">What you need</h1>
+            <p class="blog__date">Posted April 15, 2021</p>
+            <p class="blog__stmnt">
+              Ut sit amet vehicula lectus, nec vestibulum purus. Nulla a nibh
+              magna. Pellentesque commodo commodo sapien eu sagittis. Aenean
+              luctus mauris sit amet quam ornare, eu ultricies nunc auctor.
+              Nulla volutpat purus eu venenatis facilisis. Nulla risus nisl,
+              rhoncus vitae pulvinar nec, viverra eu odio. Duis nisi quam,
+              gravida sed imperdiet sed, viverra fermentum turpis. Cras non
+              iaculis augue, nec scelerisque nibh. Sed auctor dolor mi, sit amet
+              placerat tellus sagittis eu. Curabitur nec luctus dolor. Ut congue
+              rutrum vehicula. Ut viverra tincidunt nunc, vitae cursus nulla
+              scelerisque aliquam.
+            </p>
+          </article>
+          <article class="blog__article">
+            <h1 id="prosolv" class="blog__title">Provable solutions</h1>
+            <p class="blog__date">Posted June 9, 2021</p>
+            <p class="blog__stmnt">
+              Aliquam congue nibh in urna porta blandit. Mauris nec mi elit.
+              Duis ligula quam, suscipit nec hendrerit ac, efficitur pulvinar
+              tortor. Quisque venenatis leo ac hendrerit molestie. Quisque
+              malesuada, enim ut feugiat finibus, sem mi faucibus enim, vel
+              rhoncus ante justo in nibh. Duis sit amet ipsum tempus,
+              pellentesque ex sed, mollis erat. Sed metus nibh, tincidunt vel
+              laoreet eget, bibendum at est.
+            </p>
+          </article>
+          <article class="blog__article">
+            <h1 id="journeyend" class="blog__title">The end of your journey</h1>
+            <p class="blog__date">Posted October 23, 2021</p>
+            <p class="blog__stmnt">
+              Nullam ullamcorper tincidunt laoreet. Donec sapien sapien, egestas
+              id justo et, tincidunt accumsan ipsum. Etiam molestie lectus a
+              consectetur condimentum. Donec malesuada at sapien eu viverra.
+              Integer rutrum libero vitae est semper malesuada. Quisque
+              convallis enim et erat aliquam, a facilisis nunc posuere. Nulla
+              ultrices, turpis in pulvinar feugiat, dolor enim interdum mauris,
+              vitae egestas purus orci vel nibh. Aliquam eleifend est ac
+              eleifend dictum. Nunc condimentum tincidunt placerat. Praesent
+              varius ornare quam vitae placerat. Donec justo sapien, pretium
+              vitae vestibulum at, molestie eu ipsum. Proin non turpis eget
+              risus egestas ornare in nec tortor. Sed commodo lectus vitae
+              tortor blandit, id auctor mauris tempus. Aliquam erat volutpat.
+            </p>
+          </article>
+        </div>
+      </main>
 
-        <footer class="footer">
-            <div class="footer__img-container">
-                <img class="img" src="assets/secondary-photo.jpg">
-            </div>
-        </footer>
+      <footer class="footer">
+        <div class="footer__img-container">
+          <img class="img" src="assets/secondary-photo.jpg" />
+        </div>
+      </footer>
     </div>
-</body>
+  </body>
+
+  <script>
+      const $openBtn = document.querySelector('.nav__openMenu');
+      const $navBar = document.querySelector('.nav__container');
+      const $closeBtn = document.querySelector('.nav__closeNav');
+
+      let isNavbarVisible = false
+
+      function toggleNavBar() {
+        isNavbarVisible = !isNavbarVisible
+        
+        if(isNavbarVisible) $navBar.classList.add('-visible')
+        else $navBar.classList.remove('-visible')
+      }
+
+      $openBtn.addEventListener('click', toggleNavBar)
+      $closeBtn.addEventListener('click', toggleNavBar)
+  </script>
 </html>
