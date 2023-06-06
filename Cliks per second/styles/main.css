@@ -65,6 +65,7 @@ body {
     background-color: #abf1b4;
     color: var(--darkGreen);
     gap: 10%;
+    user-select: none;
 }
 
 /* FOOTER */
