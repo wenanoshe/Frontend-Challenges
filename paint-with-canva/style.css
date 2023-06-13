@@ -5,25 +5,17 @@
 }
 
 body {
+    min-height: 100vh;
     background-color: #eee;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
     color: #333;
-}
-
-a {
-    color: #333;
-}
-
-.title {
-    text-align: center;
-    margin: .7em;
 }
 
 #canvas {
     background-color: #fff;
-    cursor: crosshair;
+    cursor: pointer;
 }
 
 .edit {

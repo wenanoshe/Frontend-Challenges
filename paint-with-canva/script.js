@@ -9,6 +9,33 @@ const drawLine = (color, lineWidth, x_initial, y_initial, x_final, y_final) => {
     ctx.closePath();
 }
 
+const startpoint = (e) => {
+    drawing = true;
+    x = e.offsetX;
+    y = e.offsetY;
+    ctx.beginPath();
+
+    console.log(e)
+}
+
+const paintOnMove = (e) => {
+    const color = document.getElementById('color').value;
+    const range = document.getElementById('range').value;
+    if(drawing) {
+        drawLine(color, range, x, y, e.offsetX, e.offsetY);
+        x = e.offsetX;
+        y = e.offsetY;
+    }
+
+    if(e.offsetX < 0 || e.offsetY < 0) endLine(e);
+}
+
+const endLine = (e) => {
+    drawing = false;
+    x = e.offsetX;
+    y = e.offsetY;
+}
+
 /* === end === */
 
 const canvas = document.getElementById('canvas');
@@ -17,28 +44,12 @@ const ctx = canvas.getContext('2d');
 let x,y;
 let drawing = false;
 
-canvas.addEventListener('mousedown', e => {
-    drawing = true;
-    x = e.layerX;
-    y = e.layerY;
-    ctx.beginPath();
-});
 
-canvas.addEventListener('mousemove', e => {
-    const color = document.getElementById('color').value;
-    const range = document.getElementById('range').value;
-    if(drawing) {
-        drawLine(color, range, x, y, e.layerX, e.layerY);
-        x = e.layerX;
-        y = e.layerY;
-    }
-});
+/* === Execution === */
+canvas.addEventListener('mousedown', e => startpoint(e));
 
-canvas.addEventListener('mouseup', e => {
-    drawing = false;
-    x = e.layerX;
-    y = e.layerY;
-});
+canvas.addEventListener('mousemove', e => paintOnMove(e));
+
+canvas.addEventListener('mouseup', e => endLine(e));
 
 document.getElementById('clean').addEventListener('click', () => canvas.width = canvas.width);
-
