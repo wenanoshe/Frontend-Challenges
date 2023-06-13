@@ -23,59 +23,46 @@
     &__title {font-family: $raleway;}
 
     &__howWork {
-        width: max-content;
-        padding-bottom: .3em;
-
-        box-shadow: 0 1px $cyan;
-        position: relative;
-        user-select: none;
-        overflow: hidden;
-    }
+        margin: 1em 0;
+     }
 
     &__button {
-        margin-right: .7em;
-        position: relative;
-        
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         background-color: transparent;
         border: none;
         outline: none;
-        color: $cyan;
-    }
-    &__i {
+        padding: .4em;
+  
         position: relative;
-        color: $cyan;
-    }
-
-
-    &__howWork {
-        &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            
-            background-color: $cyan2;
-            display: block;
-    
-            position: absolute;
-            z-index: -100;
-            transform: translateY(100%);
-            transition: transform 100ms ease-in;
-        }
-
-        &:hover {
-            box-shadow: none;
-
-            &::before {
-                transform: translateY(0%);
-            }
-        }
-    }
-
-    &__howWork:hover &__button, 
-    &__howWork:hover &__i {
+        color: $cyan2;
         cursor: pointer;
-        color: $darkBlue3;
-    }
+        overflow: hidden;
+  
+        &::before {
+           content: '';
+           display: block;
+           width: 100%; 
+           height: 100%;
+           position: absolute;
+           left: 0; bottom: 0;
+  
+           background-color: $cyan2;
+           transform: translateY(90%);
+           transition: .3s transform ease;
+           z-index: -1;
+        }
+  
+        &:active {color: $white;}
+        &:active::before {background-color: $white;}
+     }
+     &__i {
+        height: 1em;
+        cursor: pointer;
+        fill: $cyan2;
+     }
+     &__button:active &__i {fill: $white}
 
     @media screen and (min-width: 920px) {
         max-width: 90%;

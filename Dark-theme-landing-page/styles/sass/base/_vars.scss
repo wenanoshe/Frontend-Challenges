@@ -13,6 +13,8 @@ $white: hsl(0, 0%, 100%);
 $openSans: 'Open Sans', sans-serif; //body
 $raleway: 'Raleway', sans-serif; //Headings, Call-to-actions, Header Navigation
 
+$radius: 0.714285714em;
+
 //-- MIXINS
 @mixin flex-col {
     display: flex;
