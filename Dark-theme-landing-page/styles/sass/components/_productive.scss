@@ -1,0 +1,90 @@
+@use '../base/vars' as *;
+
+.section-productive {
+    @include flex-center;
+}
+
+.productive {
+    padding: 3em;
+    max-width: 460px;
+
+    &__info {
+        height: 14em;
+        margin-top: 3em;
+        
+        @include flex-col;
+        justify-content: space-between;
+    }
+    &__title, 
+    &__p {
+        color: $white;
+    }
+
+    &__title {font-family: $raleway;}
+
+    &__howWork {
+        width: max-content;
+        padding-bottom: .3em;
+
+        box-shadow: 0 1px $cyan;
+        position: relative;
+        user-select: none;
+        overflow: hidden;
+    }
+
+    &__button {
+        margin-right: .7em;
+        position: relative;
+        
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: $cyan;
+    }
+    &__i {
+        position: relative;
+        color: $cyan;
+    }
+
+
+    &__howWork {
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            
+            background-color: $cyan2;
+            display: block;
+    
+            position: absolute;
+            z-index: -100;
+            transform: translateY(100%);
+            transition: transform 100ms ease-in;
+        }
+
+        &:hover {
+            box-shadow: none;
+
+            &::before {
+                transform: translateY(0%);
+            }
+        }
+    }
+
+    &__howWork:hover &__button, 
+    &__howWork:hover &__i {
+        cursor: pointer;
+        color: $darkBlue3;
+    }
+
+    @media screen and (min-width: 920px) {
+        max-width: 90%;
+        display: flex;
+        align-items: center;
+        gap: 5%;
+
+        &__img {
+            max-width: 50%;
+        }
+    }
+}

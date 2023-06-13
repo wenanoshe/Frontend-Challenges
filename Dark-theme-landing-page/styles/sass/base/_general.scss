@@ -1,18 +1,12 @@
-@use '../base/mixins' as *;
-@use '../base/variables' as *;
+@use './vars' as *;
 
 body {
-   background-color: $darkBlue2;
-   font-size: 14px;
-   font-family: $openSans;
-   line-height: 2.6em;
-   color: $white;
+    background-color: $darkBlue2;
+    font-size: 14px;
+    font-family: $openSans;
+    color: $white;
 }
 
 ul {
-   list-style-type: none;
-}
-
-p {
-   line-height: 2em;
+    list-style-type: none;
 }

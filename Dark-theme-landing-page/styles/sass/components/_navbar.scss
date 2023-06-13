@@ -1,0 +1,38 @@
+@use '../base/vars' as *;
+
+.nav {
+    .menu {
+        padding: 1.5rem 2rem;
+        background-color: $darkBlue1;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__logo {
+            width: 6em;
+        }
+
+        &__links {
+            width: 50%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        &__item {
+            color: $white;
+            &:hover {text-decoration:underline;}
+        }
+
+        @media screen and (min-width: 600px) {
+            &__links {
+                justify-content: right;
+                gap: 2rem;
+            }
+        }
+    }
+
+
+}

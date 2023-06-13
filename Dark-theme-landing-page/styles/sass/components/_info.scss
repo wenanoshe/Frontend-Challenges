@@ -1,0 +1,45 @@
+@use '../base/vars' as *;
+
+.section-info {
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    max-width: 930px;
+    padding: 0 3em;
+    margin-top: 6em;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 4em;
+    
+    &__card {
+        width: 100%;
+        max-width: 380px;
+        height: 20em;
+        padding: 1em 2em;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    &__icon {width: 8em;}
+    &__icon-security {width: 6em;}
+    &__icon-access {width: 7em;}
+    
+    &__text, 
+    &__title {
+        color: $white;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 850px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        margin-bottom: 3rem;
+    }
+}

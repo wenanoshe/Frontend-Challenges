@@ -1,0 +1,414 @@
+body {
+  background-color: hsl(218, 28%, 13%);
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: hsl(0, 0%, 100%);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav .menu {
+  padding: 1.5rem 2rem;
+  background-color: hsl(217, 28%, 15%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .menu__logo {
+  width: 6em;
+}
+.nav .menu__links {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .menu__item {
+  color: hsl(0, 0%, 100%);
+}
+.nav .menu__item:hover {
+  text-decoration: underline;
+}
+@media screen and (min-width: 600px) {
+  .nav .menu__links {
+    justify-content: right;
+    gap: 2rem;
+  }
+}
+
+.intro {
+  height: 92.7vh;
+  padding: 3em;
+  background-color: hsl(217, 28%, 15%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.intro::before {
+  content: "";
+  width: 100%;
+  height: 30%;
+  display: block;
+  background: url(../../assets/images/bg-curvy-mobile.svg) no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+}
+.intro__title, .intro__p, .intro__button {
+  position: relative;
+  z-index: 100;
+}
+.intro__title {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: hsl(0, 0%, 100%);
+}
+.intro__p {
+  margin: 0;
+  color: hsl(0, 0%, 100%);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+.intro__button {
+  padding: 1em 3em;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: hsl(187, 62%, 58%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  transition: background-color 100ms, box-shadow 100ms;
+}
+.intro__button:hover {
+  background-color: hsl(198, 60%, 50%);
+  box-shadow: 5px 5px 5px hsl(216, 53%, 9%);
+}
+@media screen and (min-width: 600px) {
+  .intro__img {
+    max-height: 50%;
+  }
+  .intro__p {
+    max-width: 512px;
+  }
+}
+
+.section-info {
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  max-width: 930px;
+  padding: 0 3em;
+  margin-top: 6em;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4em;
+}
+.info__card {
+  width: 100%;
+  max-width: 380px;
+  height: 20em;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.info__icon {
+  width: 8em;
+}
+.info__icon-security {
+  width: 6em;
+}
+.info__icon-access {
+  width: 7em;
+}
+.info__text, .info__title {
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+@media screen and (min-width: 850px) {
+  .info {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 3rem;
+  }
+}
+
+.section-productive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productive {
+  padding: 3em;
+  max-width: 460px;
+}
+.productive__info {
+  height: 14em;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.productive__title, .productive__p {
+  color: hsl(0, 0%, 100%);
+}
+.productive__title {
+  font-family: "Raleway", sans-serif;
+}
+.productive__howWork {
+  width: -moz-max-content;
+  width: max-content;
+  padding-bottom: 0.3em;
+  box-shadow: 0 1px hsl(176, 68%, 64%);
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+.productive__button {
+  margin-right: 0.7em;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: hsl(176, 68%, 64%);
+}
+.productive__i {
+  position: relative;
+  color: hsl(176, 68%, 64%);
+}
+.productive__howWork::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: hsl(187, 62%, 58%);
+  display: block;
+  position: absolute;
+  z-index: -100;
+  transform: translateY(100%);
+  transition: transform 100ms ease-in;
+}
+.productive__howWork:hover {
+  box-shadow: none;
+}
+.productive__howWork:hover::before {
+  transform: translateY(0%);
+}
+.productive__howWork:hover .productive__button, .productive__howWork:hover .productive__i {
+  cursor: pointer;
+  color: hsl(216, 53%, 9%);
+}
+@media screen and (min-width: 920px) {
+  .productive {
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+  }
+  .productive__img {
+    max-width: 50%;
+  }
+}
+
+.testimony {
+  padding: 0 3em;
+  margin-top: 5em;
+}
+.testimony__quotes {
+  transform: scale(0.7) translateY(50%);
+}
+.testimony__cardsBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 2rem;
+  justify-content: center;
+}
+.testimony__card {
+  height: -moz-max-content;
+  height: max-content;
+  padding: 2em;
+  max-width: 450px;
+  border-radius: 5px;
+  line-height: 1.5;
+  background-color: hsl(219, 30%, 18%);
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimony__profile {
+  display: flex;
+}
+.testimony__photoP {
+  width: 3em;
+  margin-right: 1em;
+  border-radius: 50%;
+}
+.testimony__profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.testimony__name {
+  font-family: "Raleway", sans-serif;
+}
+.testimony__job {
+  font-size: 0.8em;
+}
+@media screen and (min-width: 500px) {
+  .testimony__card {
+    gap: 1rem;
+  }
+}
+
+.section-subscribe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscribe {
+  height: 24rem;
+  max-width: 770px;
+  margin: 6em 6%;
+  padding: 0 3em;
+  background-color: hsl(217, 28%, 15%);
+  color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.subscribe__title {
+  font-family: "Raleway", sans-serif;
+}
+.subscribe__form {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.subscribe__input, .subscribe__button {
+  height: 4em;
+  border-radius: 50px;
+  border: none;
+}
+.subscribe__input {
+  padding: 0 1em;
+}
+.subscribe__input:focus {
+  outline: 2px solid hsl(198, 60%, 50%);
+  background-color: #eee;
+}
+.subscribe__button {
+  padding: 1em 3em;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: hsl(187, 62%, 58%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  transition: background-color 100ms, box-shadow 100ms;
+}
+.subscribe__button:hover {
+  background-color: hsl(198, 60%, 50%);
+  box-shadow: 5px 5px 5px hsl(216, 53%, 9%);
+}
+@media screen and (min-width: 870px) {
+  .subscribe__form {
+    height: -moz-max-content;
+    height: max-content;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .subscribe__input {
+    display: block;
+    flex-grow: 1;
+    height: 100%;
+  }
+}
+
+.footer {
+  padding: 2rem;
+}
+.footer__section-logo {
+  margin-bottom: 2rem;
+}
+.footer__section-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 342px;
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer__about li, .footer__contact li {
+  padding: 8px 0;
+}
+.footer__about a, .footer__contact a {
+  color: hsl(0, 0%, 100%);
+}
+.footer__about a:hover, .footer__contact a:hover {
+  text-decoration: underline;
+}
+.footer__sm {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+.footer__sm a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+@media screen and (min-width: 420px) {
+  .footer__section-info {
+    justify-content: center;
+  }
+  .footer__social:first-child {
+    grid-row: span 2;
+  }
+  .footer__links {
+    display: flex;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .footer__section-info {
+    flex-direction: row;
+    gap: 10%;
+  }
+  .footer__sm {
+    flex-direction: column;
+  }
+}
