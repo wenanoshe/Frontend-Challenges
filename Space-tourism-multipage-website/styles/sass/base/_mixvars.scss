@@ -1,0 +1,36 @@
+/* === Typography === */
+$belefair: 'Bellefair', serif;
+$barlow-condensed: 'Barlow Condensed', sans-serif;
+$barlow: 'Barlow', sans-serif;
+/* === --------- === */
+
+/* === Colors ===
+ */
+$dark-blue: #0b0d17;
+$dark-blue-light: #333852;
+$desatured-dark-blue-light: #3338528c;
+$light-blue: #d0d6f9;
+$gray: #7d8096;
+$white : #fff;
+/* === --------- === */
+
+
+/* === Mixins === */
+@mixin flex($jc: stretch, $ai: stretch, $fd: row) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin before($width, $height) {
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+}
+
+@mixin transition($target, $duration: 300ms) {
+    transition: $target $duration;
+}
+/* === --------- === */

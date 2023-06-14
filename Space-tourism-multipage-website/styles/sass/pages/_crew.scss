@@ -1,0 +1,137 @@
+@use '../base/mixvars' as *;
+
+.body-crew {
+    background-image: url(../../../assets/crew/background-crew-desktop.jpg);
+}
+
+.crew {
+    @include flex(space-between);
+    height: 71vh;
+     
+    &__left {
+        @include flex(space-between, stretch, column);
+        height: 80%
+    }
+
+    &__character {
+        @include flex(stretch, stretch, column);
+        font-family: $belefair;
+        text-transform: uppercase;
+        font-weight: lighter;
+
+        & span:first-child {
+            color: $gray;
+        }
+
+        & span:last-child {
+            font-size: 56px;
+        }
+    }
+
+    &__characterDescription {
+        margin-top: 1em;
+        max-width: 508px;
+    }
+
+    &__changer {
+        width: 6em;
+        height: 1em;
+        @include flex(space-between, center);
+    }
+
+    &__dot {
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        border-radius: 2em;
+        border: none;
+        
+        background-color: $dark-blue-light;
+        cursor: pointer;
+
+        @include transition(transform);
+
+        &:active {
+            transform: scale(50%);
+        }
+    }
+
+    .active-dot {
+        background-color: $white;
+    }
+
+    &__img{
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .body-crew {
+        background-image: url(../../../assets/crew/background-crew-tablet.jpg);
+    }
+    
+    .crew {
+        flex-direction: column;    
+        margin-left: 2em;
+        max-height: 70vh;
+        
+        &__left {
+            text-align: center;
+            @include flex(space-between, center, column);
+        }
+
+        &__title {
+            text-align:left;
+            align-self: flex-start;
+        }
+
+        &__content, 
+        &__changer {
+            margin-top: 2em;
+        }
+
+        &__right {
+            margin-top: 1em;
+            max-height: 70%;
+            @include flex(center, center);
+        }
+
+        &__img {
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .crew {
+        height: max-content;
+        font-size: 14px;
+        text-align: center;
+        display: grid;
+        grid-template: repeat(2, minmax(223px, 1fr)) / 100%;
+        gap: 2em;
+        justify-items: center;
+
+        &__right {
+            margin-top: 0;
+            grid-row-start: 1;
+            width: 80%; 
+            min-height: 100%;
+            border-bottom: 2px solid $dark-blue-light;
+        }
+
+        &__img {height: 100%;}
+
+        &__title {
+            font-size: 1.14em;
+            align-self: center;
+        }
+        & #name {
+            font-size: 1.7em;
+        }
+
+        &__characterDescription {
+            max-width: 90vw;
+        }
+    }
+}

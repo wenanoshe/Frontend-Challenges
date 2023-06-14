@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/css/normalize.css">
+  <link rel="stylesheet" href="styles/css/main.css">
+
+  <!-- scripts -->
+  <script defer src="scripts/navBar.js"></script>
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body class="home-body">
+  <header>
+    <nav class="nav">
+      <div class="nav__logoBox">
+        <a href="index.html"><img class="nav_logo" src="assets/shared/logo.svg" alt="space tourism logo"></a>
+      </div>
+
+      <div class="nav__line-decoration"></div>
+      
+      <button id="hamburguer" class="hamburguer-menu">
+        <img class="hamburguer-menu__icon" src="assets/shared/icon-hamburger.svg">        
+      </button>
+
+      <ul class="nav__ul">
+        <li class="nav__item"><a class="nav__link" href="index.html">
+          <span class="text-bold">00</span><span>Home</span>
+        </a></li>
+        <li class="nav__item"><a class="nav__link" href="destination.html">
+          <span class="text-bold">01</span><span>Destination</span>
+        </a></li>
+        <li class="nav__item"><a class="nav__link" href="crew.html">
+          <span class="text-bold">02</span><span>Crew</span>
+        </a></li>
+        <li class="nav__item"><a class="nav__link" href="technology.html">
+          <span class="text-bold">03</span><span>Technology</span>
+        </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home pad-content">
+    <div class="home__context">
+      <h1 class="home__title">So, you want to travel to <span class="home__heading">SPACE</span></h1>
+      <p class="home__description text-description">
+        Let’s face it; if you want to go to space, you might as well genuinely go to 
+        outer space and not hover kind of on the edge of it. Well sit back, and relax 
+        because we’ll give you a truly out of this world experience!
+      </p>
+    </div>
+    <button class="home__button"><a href="index.html">Explore</a></button>
+  </main>
+</body>
+</html>
